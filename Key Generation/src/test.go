@@ -6,5 +6,5 @@ import ("eckg";
 
 func main(){
 	var num,_ = new(big.Int).SetString("43",10)
-	fmt.Println(eckg.IntToBin(num))
+	fmt.Println(eckg.Partition(num))
 }

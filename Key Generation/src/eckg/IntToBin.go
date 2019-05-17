@@ -1,7 +1,7 @@
 package eckg
 
 import ("math/big";
-		"fmt")
+		)
 
 func IntToBin(i *big.Int) string{
 	var revbin string = ""
@@ -12,7 +12,6 @@ func IntToBin(i *big.Int) string{
 		mod.Mod(i,two)
 		i.Div(i,two)
 		revbin += mod.String()
-		fmt.Println(mod)
 	}
 	bin := Reverse(revbin)
 	return bin

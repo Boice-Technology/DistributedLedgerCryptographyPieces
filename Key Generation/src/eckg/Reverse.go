@@ -1,6 +1,7 @@
 package eckg
 
-import "math"
+import ("math";
+		)	
 
 func Reverse(s string) string{
 	str := []rune(s)
