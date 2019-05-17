@@ -1,10 +1,11 @@
 package main
 
-import ("eckg";
-		"math/big";
+import (
+		"eckg";
+		//"math/big";
 		"fmt")
 
 func main(){
-	var num,_ = new(big.Int).SetString("43",10)
-	fmt.Println(eckg.Partition(num))
+	fmt.Println(eckg.TwoPowerMulOfGen(0))
+	fmt.Println(eckg.TwoPowerMulOfGen(1))
 }
