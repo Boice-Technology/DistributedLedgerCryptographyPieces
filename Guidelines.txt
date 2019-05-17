@@ -1,6 +1,6 @@
 Important Guidelines to be maintained and followed:
 
-1.) Every usecase folder should consist of sources related to that particular concept or implementation, like for instance, a research paper link or youtube video link.
+1.) Every usecase folder should consist of sources (if available) related to that particular concept or implementation, like for instance, a research paper link or youtube video link.
 2.) A code file should consist of only one function(exceptions two or three) depending upon function's significance to be included in a file.
 3.) A code file name should be intuitive, descriptive and CamelCase.
 4.) Codes related to one usecase must be organised in Go packages.
