@@ -4,8 +4,8 @@ package eckg
 	The SECP256K1 with N as order, curve is y^2 = x^3 + 7 (mod PrimeF) 
 	where A and B are curve coefficients.
 	PrimeF is Prime field of a curve.
-	N is the order of curve, ie. Private key can range between 0 to n-1.
-	(GenX,GenY) is a generator for the curve which lies on a curve having relation, Pub = Pri * G
+	N is the order of curve, ie. Private key can range between 0 to N-1.
+	(GenX,GenY) is a generator for the curve which lies on a curve having relation, Pub = Pri * Gen
 	where Pub is a public key and Pri is private key
 */
 
