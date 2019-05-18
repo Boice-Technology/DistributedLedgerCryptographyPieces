@@ -3,7 +3,7 @@ package eckg
 import ("math/big";
 		)
 		
-func PrimaryKey(pri *big.Int) (string,string) {
+func PublicKey(pri *big.Int) (string,string) {
 	var partition = Partition(pri)
 	length := len(partition)
 	i := 1
