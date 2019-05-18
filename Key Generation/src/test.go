@@ -1,12 +1,15 @@
 package main
 
 import ("eckg";
-		"fmt"
+		"fmt";
+		"math/big"
 		)
 
 func main(){
-	fmt.Println(eckg.GenMultiples[0][0],eckg.GenMultiples[0][1])
-	fmt.Println(eckg.PrimeF)
-	//eckg.MultiplesFileGenerator()
+	//var Pri = new(big.Int).SetString("3",10)
+	//fmt.Println(PublicKey(Pri))
+	var x,_ = new(big.Int).SetString("34499628904269660561674201530767158034393542375844615658184142552908072257357",10)
+	var primef,_ = new(big.Int).SetString(eckg.PrimeF,10)
+	fmt.Println(x.ModInverse(x,primef))
 }
 
