@@ -1,11 +1,11 @@
 package main
 
-import (
+import (//"fmt";
 		"eckg";
-		//"math/big";
-		"fmt")
+		)
 
 func main(){
-	fmt.Println(eckg.TwoPowerMulOfGen(0))
-	fmt.Println(eckg.TwoPowerMulOfGen(1))
+	eckg.MultiplesFileGenerator()
+	//fmt.Printf("%T %v",eckg.ToString(1000),eckg.ToString(1000))
+	//fmt.Println(string(48))
 }
