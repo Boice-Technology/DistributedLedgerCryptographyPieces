@@ -11,14 +11,14 @@ func MultiplesFileGenerator(){
 	var y,_ = new(big.Int).SetString("0",10)
 	var j int16 = int16(1)
 	var filestr string = ""
-	filestr += "const G2_0X string = \"" + GenX + "\"\n"
-	filestr += "const G2_0Y string = \"" + GenY + "\"\n"
+	filestr += "[2]string{\"" + GenX + "\" , "
+	filestr += "\"" + GenY + "\" }"
 	for j<=256 {
 		slope := SlopeOfTangent(prevx,prevy)
 		x = XCoordinate(slope,prevx)
 		y = YCoordinate(slope,prevx,prevy,x)
-		filestr += "const G2_" + ToString(j) + "X string = \"" + x.String() + "\"\n"
-		filestr += "const G2_" + ToString(j) + "Y string = \"" + y.String() + "\"\n"
+		filestr += ", [2]string{ " + "\"" + x.String() + "\" , "
+		filestr += "\"" + y.String() + "\" }"
 		prevx = x
 		prevy = y
 		j++
