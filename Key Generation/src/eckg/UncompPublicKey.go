@@ -10,8 +10,6 @@ func UncompPublicKey(pri *big.Int) string{
 	yBig,_ := new(big.Int).SetString(y,10)
 	xHex := fmt.Sprintf("%x",xBig)
 	yHex := fmt.Sprintf("%x",yBig)
-	fmt.Println(xHex)
-	fmt.Println(yHex)
 	UncompPubKey := "04" + xHex + yHex
 	return UncompPubKey
 }
