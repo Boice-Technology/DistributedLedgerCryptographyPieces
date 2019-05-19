@@ -12,6 +12,8 @@ func main(){
 	var comppub string = eckg.CompPublicKey(pri2)
 	fmt.Println(uncomppub)
 	fmt.Println(comppub)
-	fmt.Println(eckg.BoiceAddressGenerator(uncomppub))
-	fmt.Println(eckg.BoiceAddressGenerator(comppub))
+	str1 := fmt.Sprint(eckg.BoiceAddressGenerator(uncomppub))
+	str2 := fmt.Sprint(eckg.BoiceAddressGenerator(comppub))
+	eckg.CheckBoiceAddress(str1)
+	eckg.CheckBoiceAddress(str2)
 }
