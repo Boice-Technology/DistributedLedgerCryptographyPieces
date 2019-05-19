@@ -5,5 +5,5 @@ import ("eckg";
 		)
 		
 func main(){
-	fmt.Println(eckg.Checksum("Hello"))
+	eckg.CheckBoiceAddress()
 }

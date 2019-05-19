@@ -16,7 +16,6 @@ func BoiceAddressGenerator(publicKey string) string {
 	boiceAddrStr = "0x00" + boiceAddrStr
 	checksum := Checksum(boiceAddrStr)
 	boiceAddrStr += checksum
-	fmt.Println(boiceAddrStr)
 	base58EncStr := base58.Encode([]byte(boiceAddrStr))
 	return base58EncStr
 }

@@ -4,4 +4,4 @@ https://en.bitcoin.it/wiki/Secp256k1
 https://medium.com/orbs-network/big-integers-in-go-14534d0e490d	
 https://wiki.openssl.org/index.php/Elliptic_Curve_Cryptography
 https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch04.asciidoc
-https://rosettacode.org/wiki/RIPEMD-160#Go
+https://rosettacode.org/wiki/RIPEMD-160#Go	

@@ -14,6 +14,6 @@ func main(){
 	fmt.Println(comppub)
 	str1 := fmt.Sprint(eckg.BoiceAddressGenerator(uncomppub))
 	str2 := fmt.Sprint(eckg.BoiceAddressGenerator(comppub))
-	eckg.CheckBoiceAddress(str1)
-	eckg.CheckBoiceAddress(str2)
+	fmt.Println(eckg.CheckBoiceAddress(str1))
+	fmt.Println(eckg.CheckBoiceAddress(str2))
 }
