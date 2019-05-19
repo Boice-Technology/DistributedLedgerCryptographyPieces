@@ -1,12 +1,17 @@
 package main
 
-import ("eckg";
+import ("crypto/sha256";
+		"golang.org/x/crypto/ripemd160";
 		"fmt";
-		"math/big"
 		)
 
 func main(){
-	var Pri,_ = new(big.Int).SetString("3",10)
-	fmt.Println(eckg.PublicKey(Pri))
+	sum := sha256.Sum256([]byte("Hello World"))
+	fmt.Printf("%x\n",sum)
+	str := fmt.Sprintf("%x",sum)
+	fmt.Println(str)
+	digest := ripemd160.New()
+	digest.Write([]byte(str))
+	sum2 := digest.Sum(nil)
+	fmt.Printf("%x\n",sum2)
 }
-
