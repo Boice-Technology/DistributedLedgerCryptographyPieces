@@ -5,7 +5,7 @@ import ("github.com/btcsuite/btcutil/base58";
 		)
 
 func CheckBoiceAddress(base58Enc string) bool {
-	decodedBytes := base58.Decode(base58Enc)
+	decodedBytes := base58.Decode(base58Enc[1:])
 	decodeString := fmt.Sprintf("%s",decodedBytes)
 	stringChecksum := Checksum(decodeString[:len(decodeString)-4])
 	if stringChecksum == decodeString[len(decodeString)-4:]{
