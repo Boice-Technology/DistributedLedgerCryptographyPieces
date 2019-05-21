@@ -1,9 +1,8 @@
 package main
 
-import ("eckg";
-		"fmt";
+import ("fmt";
 		)
-		
+
 func main(){
-	eckg.CheckBoiceAddress()
+	fmt.Printf("%d",0xabc)
 }
