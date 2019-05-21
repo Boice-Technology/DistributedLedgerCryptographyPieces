@@ -1,11 +1,11 @@
 package main
 
-import ("walletcrypto";
-		"fmt";
+import ("fmt";
+		"walletcrypto";
 		)
-
+		
 func main(){
-	str := walletcrypto.Seed("hello","hey")
-	fmt.Println(str)
-	fmt.Println(len(str))
-}		
+	str1, str2 := walletcrypto.MasterNode("hello")
+	fmt.Println(str1,str2)
+	fmt.Println(len(str1),len(str2))
+}
