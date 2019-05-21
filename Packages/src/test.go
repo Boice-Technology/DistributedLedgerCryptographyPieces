@@ -1,9 +1,11 @@
 package main
 
-import ("fmt";
-		"walletcrypto";
+import ("walletcrypto";
+		"fmt";
 		)
-	
+
 func main(){
-	fmt.Println(walletcrypto.Mnemonic("0123456789abcdef0123456789abcdea"))
-}
+	str := walletcrypto.Seed("hello","hey")
+	fmt.Println(str)
+	fmt.Println(len(str))
+}		
