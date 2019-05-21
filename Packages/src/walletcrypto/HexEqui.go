@@ -1,6 +1,7 @@
 package walletcrypto
 
-func HexEqui(hexchar string) int {
+func HexEqui(hexChar string) int {
+	
 	switch(hexChar){	
 		case "0":
 			return 0
@@ -35,4 +36,5 @@ func HexEqui(hexchar string) int {
 		case "f":
 			return 15
 	}
+	return 16
 }
