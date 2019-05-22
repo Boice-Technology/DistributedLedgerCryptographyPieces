@@ -5,7 +5,7 @@ import ("fmt";
 		)
 		
 func main(){
-	str1, str2 := walletcrypto.MasterNode("hello")
-	fmt.Println(str1,str2)
-	fmt.Println(len(str1),len(str2))
+	str1, str2 := walletcrypto.PrivateChildKey("abc","hii",0)
+	fmt.Println(str1)
+	fmt.Println(str2)
 }
