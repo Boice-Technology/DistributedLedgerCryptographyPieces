@@ -1,0 +1,2 @@
+https://raghavsood.com/blog/2018/06/10/bitcoin-signature-types-sighash
+https://en.bitcoin.it/wiki/Miner_fees
