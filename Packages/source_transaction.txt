@@ -1,2 +1,4 @@
 https://raghavsood.com/blog/2018/06/10/bitcoin-signature-types-sighash
 https://en.bitcoin.it/wiki/Miner_fees
+https://www.youtube.com/watch?v=QzUThXGRFBU
+https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm
