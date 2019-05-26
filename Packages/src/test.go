@@ -5,8 +5,7 @@ import ("transactions";
 		"fmt";
 		)
 		
-func main(){
-	pri, _ := new(big.Int).SetString("1",10)
-	x, y := transactions.EphemeralPublicKey(pri)
-	fmt.Println(x,y)
+func main(){	
+	ephePri,_ := new(big.Int).SetString("1",10)
+	fmt.Println(transactions.RSignature(ephePri))
 }

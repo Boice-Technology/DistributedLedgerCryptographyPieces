@@ -4,8 +4,8 @@ import ("eckg";
 		"math/big";
 		)
 		
-func EphemeralPublicKey(pri *big.Int) (string, string) {
-	x_coor, y_coor := eckg.PublicKey(pri)
+func EphemeralPublicKey(ephePri *big.Int) (string, string) {
+	x_coor, y_coor := eckg.PublicKey(ephePri)
 	return x_coor, y_coor
 }
 		
