@@ -13,6 +13,6 @@ func U2(r *big.Int,s *big.Int) string {
 	prod.Mul(r,modInv)
 	u2,_ := new(big.Int).SetString("0",10)
 	u2.Mod(prod,n)
-	u2Str := fmt.Sprintf("%s",u1)
-	return u2str
+	u2Str := fmt.Sprintf("%s",u2)
+	return u2Str
 }

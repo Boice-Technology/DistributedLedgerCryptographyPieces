@@ -14,5 +14,5 @@ func U1(z *big.Int,s *big.Int) string {
 	u1,_ := new(big.Int).SetString("0",10)
 	u1.Mod(prod,n)
 	u1Str := fmt.Sprintf("%s",u1)
-	return u1str
+	return u1Str
 }

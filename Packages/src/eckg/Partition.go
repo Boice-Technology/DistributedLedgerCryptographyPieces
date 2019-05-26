@@ -9,7 +9,7 @@ func Partition(i *big.Int) []int16 {
 	 var PartitionSlice []int16 
 	 var j int16
 	 for j = length-1; j>=0 ; j--{
-		if string(bin[j]) == "1" {
+		if string(bin[length-1-j]) == "1" {
 			PartitionSlice = append(PartitionSlice,j)
 		}
 	 }
