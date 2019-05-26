@@ -1,11 +1,12 @@
 package main
 
-import ("walletcrypto";
+import ("transactions";
+		"math/big";
 		"fmt";
 		)
 		
 func main(){
-	str1, str2 := walletcrypto.HardPrivateChildKey("31","abcd",0)
-	fmt.Println(str1)
-	fmt.Println(str2)
+	pri, _ := new(big.Int).SetString("1",10)
+	x, y := transactions.EphemeralPublicKey(pri)
+	fmt.Println(x,y)
 }
