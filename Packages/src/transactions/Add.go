@@ -28,7 +28,7 @@ func Add(x1Str string, y1Str string, x2Str string, y2Str string) (string, string
 	x.Sub(sqr,add)
 	x.Mod(x,primef)
 	diff3,_ := new(big.Int).SetString("0",10)
-	diff3.Sub(x2,x1)
+	diff3.Sub(x2,x)
 	prod,_ := new(big.Int).SetString("0",10)
 	prod.Mul(slope,diff3)
 	y,_ := new(big.Int).SetString("0",10)
