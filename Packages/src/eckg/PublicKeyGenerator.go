@@ -1,0 +1,3 @@
+package eckg
+
+func PublicKeyGenerator()
