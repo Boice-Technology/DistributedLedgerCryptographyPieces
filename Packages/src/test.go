@@ -2,8 +2,8 @@ package main
 
 import ("fmt";
 		//"math/big"
-		"elliptic_curve_key_generation";
-		
+		//"elliptic_curve_key_generation";
+		"wallet"
 		)
 		
 func main(){
@@ -19,11 +19,12 @@ func main(){
 	fmt.Println(elliptic_curve_key_generation.UncompressedPublicKey("6762722"))
 	fmt.Println(elliptic_curve_key_generation.CompressedPublicKey("6762722"))
 	*/
-	//sum := sha256.Sum256([]byte("hello world"))
+	/*	//sum := sha256.Sum256([]byte("hello world"))
 	//fmt.Println(sum)
 	//fmt.Printf("%X",sum)
 	boiceAddress := elliptic_curve_key_generation.BoiceAddressGenerator("04FA066EACB1F03731C9C904F9D2C2B2D828C35C8654D4C8FFA2B7CD3B2F64B95FD7182EEF0AC14D9DD51D4356365D099827B91B4099358EB9B72F892060F89BBB")
 	fmt.Println(elliptic_curve_key_generation.ValidateBoiceAddress(boiceAddress))
 	//fmt.Println(elliptic_curve_key_generation.SHA256("Hello World"))
-	//fmt.Println(elliptic_curve_key_generation.RIPEMD160("Hello World"))
+	//fmt.Println(elliptic_curve_key_generation.RIPEMD160("Hello World"))*/
+	fmt.Println("+"+wallet.MnemonicGenerator("0C1E24E5917779D297E14D45F14E1A1A")+"+	")
 }
