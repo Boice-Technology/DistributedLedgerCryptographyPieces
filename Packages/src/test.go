@@ -3,7 +3,8 @@ package main
 import ("fmt";
 		//"math/big"
 		//"elliptic_curve_key_generation";
-		"wallet"
+		"wallet";
+		"crypto/sha512";
 		)
 		
 func main(){
@@ -27,4 +28,6 @@ func main(){
 	//fmt.Println(elliptic_curve_key_generation.SHA256("Hello World"))
 	//fmt.Println(elliptic_curve_key_generation.RIPEMD160("Hello World"))*/
 	fmt.Println("+"+wallet.MnemonicGenerator("0C1E24E5917779D297E14D45F14E1A1A")+"+	")
+	bytes := sha512.Sum512([]byte("hello world"))
+	fmt.Printf("%X",bytes)
 }

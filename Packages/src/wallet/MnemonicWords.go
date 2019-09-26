@@ -1,4 +1,4 @@
-// 2048 mnemonic words used to generate a mnemonic from a 132 bit randon sequence
+// 2048 mnemonic words used to generate a mnemonic from a 132 bit random sequence
 
 package wallet
 
