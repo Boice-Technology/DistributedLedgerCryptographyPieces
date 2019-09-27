@@ -1,0 +1,2 @@
+https://bitcoin.stackexchange.com/questions/61660/how-can-extended-public-keys-generate-child-public-keys-without-generating-the-c
+https://bitcointalk.org/index.php?topic=644919.0
