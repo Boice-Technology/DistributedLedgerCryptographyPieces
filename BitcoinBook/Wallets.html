@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc -->
+<html lang="en" class="gr__github_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <link rel="dns-prefetch" href="https://github.githubassets.com/">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com/">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-lEwNhIgWxFtdGboTlCciWWGiX2vG3LOojEE671oRJEhnPj6jpmgQTJtpq3O2KBzCcln6RzwfvHlyFaI/oR+RNQ==" rel="stylesheet" href="./Wallets_files/frameworks-849637ecbd4bd65815cc113d80fee2d4.css">
+  
+    <link crossorigin="anonymous" media="all" integrity="sha512-ZIVQ5xH4xRPgEBzl7RRQebsfNJcuNt4tdhboEnRhGSGhyXVESRTxdb9W439oH0MeqADdj5gxaLCLmHYTlOXqtw==" rel="stylesheet" href="./Wallets_files/github-765e7332c1c58bca34b5cadb2351d4d4.css">
+    
+    
+    
+    
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>bitcoinbook/ch05.asciidoc at develop · bitcoinbook/bitcoinbook</title>
+    <meta name="description" content="Mastering Bitcoin 2nd Edition - Programming the Open Blockchain - bitcoinbook/bitcoinbook">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    <meta name="twitter:image:src" content="https://avatars2.githubusercontent.com/u/5091621?s=400&amp;v=4"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="bitcoinbook/bitcoinbook"><meta name="twitter:description" content="Mastering Bitcoin 2nd Edition - Programming the Open Blockchain - bitcoinbook/bitcoinbook">
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/5091621?s=400&amp;v=4"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="bitcoinbook/bitcoinbook"><meta property="og:url" content="https://github.com/bitcoinbook/bitcoinbook"><meta property="og:description" content="Mastering Bitcoin 2nd Edition - Programming the Open Blockchain - bitcoinbook/bitcoinbook">
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NDM2NTUxMzAyOjJlYzZiZWFmNTQ4ZDkwOWUwOWQxZTZkZTZmY2RjZGJlMWEwNWVlMGYxYWVhYjExYjMyMmE4OThlOTA4ZmJhYjc=--131b66f6f8b6de2d5e6b7e82590a51ec08304153">
+  <meta name="pjax-timeout" content="1000">
+  <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
+  <meta name="request-id" content="C268:3B13:1B1C3F:276224:5D8F4E9B" data-pjax-transient="">
+
+
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+  <meta name="octolytics-host" content="collector.githubapp.com"><meta name="octolytics-app-id" content="github"><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event"><meta name="octolytics-dimension-request_id" content="C268:3B13:1B1C3F:276224:5D8F4E9B"><meta name="octolytics-dimension-region_edge" content="ap-south-1"><meta name="octolytics-dimension-region_render" content="iad"><meta name="octolytics-dimension-ga_id" content="935325271.1541954184" class="js-octo-ga-id"><meta name="octolytics-dimension-visitor_id" content="21985677137173129"><meta name="octolytics-actor-id" content="39230975"><meta name="octolytics-actor-login" content="DivyPatel9881"><meta name="octolytics-actor-hash" content="333d6a2d3187fb8dfad2488c729f2e3c1a691345037470fab9aa69054014e5ce">
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true">
+
+
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+  <meta class="js-ga-set" name="userId" content="28564a525bddbe7ce98c4bed09794243">
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="DivyPatel9881">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="OWE3YmJjNjExYWIxZjkzNjYwMmViMzJmNDZjN2JlOGNmMGU2ZmU5MWI0ZTM2MDc1YTEzMjU2YzAwMjQ4YzIyNXx7InJlbW90ZV9hZGRyZXNzIjoiMTAzLjE3LjEwMy4yMDciLCJyZXF1ZXN0X2lkIjoiQzI2ODozQjEzOjFCMUMzRjoyNzYyMjQ6NUQ4RjRFOUIiLCJ0aW1lc3RhbXAiOjE1Njk2NzI4NjEsImhvc3QiOiJnaXRodWIuY29tIn0=">
+
+    <meta name="enabled-features" content="ACTIONS_V2_ON_MARKETPLACE,MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,NOTIFY_ON_BLOCK,RELATED_ISSUES,GHE_CLOUD_TRIAL">
+
+  <meta name="html-safe-nonce" content="70dee6bc85a4af81b62e97cee1b49327bc2d5f4f">
+
+  <meta http-equiv="x-pjax-version" content="8ae50ecd04a45a3167125c02d6725191">
+  
+
+      <link href="https://github.com/bitcoinbook/bitcoinbook/commits/develop.atom" rel="alternate" title="Recent Commits to bitcoinbook:develop" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/bitcoinbook/bitcoinbook git https://github.com/bitcoinbook/bitcoinbook.git">
+
+  <meta name="octolytics-dimension-user_id" content="5091621"><meta name="octolytics-dimension-user_login" content="bitcoinbook"><meta name="octolytics-dimension-repository_id" content="12044132"><meta name="octolytics-dimension-repository_nwo" content="bitcoinbook/bitcoinbook"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="12044132"><meta name="octolytics-dimension-repository_network_root_nwo" content="bitcoinbook/bitcoinbook"><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false">
+
+
+    <link rel="canonical" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc" data-pjax-transient="">
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+  <meta name="webauthn-auth-enabled" content="true">
+
+  <meta name="webauthn-registration-enabled" content="true">
+
+  <link rel="manifest" href="https://github.com/manifest.json" crossorigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production page-responsive page-blob" data-gr-c-s-loaded="true">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#start-of-content" tabindex="1" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+          <header class="Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
+
+    <div class="Header-item d-none d-lg-flex">
+      <a class="Header-link" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+
+    </div>
+
+    <div class="Header-item d-lg-none">
+      <button class="Header-link btn-link js-details-target" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 12 16" version="1.1" width="18" aria-hidden="true"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg>
+      </button>
+    </div>
+
+    <div class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
+        <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to" role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox" aria-expanded="false">
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-site-search-form" role="search" aria-label="Site" data-scope-type="Repository" data-scope-id="12044132" data-scoped-search-url="/bitcoinbook/bitcoinbook/search" data-unscoped-search-url="/search" action="https://github.com/bitcoinbook/bitcoinbook/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <label class="form-control input-sm header-search-wrapper p-0 header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
+        <input type="text" class="form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" data-hotkey="s,/" name="q" value="" placeholder="Search or jump to…" data-unscoped-placeholder="Search or jump to…" data-scoped-placeholder="Search or jump to…" autocapitalize="off" aria-autocomplete="list" aria-controls="jump-to-results" aria-label="Search or jump to…" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=Rb0rAKHdt6XMYG71VNH7aBIYfrMe3WBmFONwNSCo5f4kGVm68N/oXlzrDeizMMJIGZQEMyqOkU+qdN7gOleVHQ==" spellcheck="false" autocomplete="off">
+          <input type="hidden" class="js-site-search-type-field" name="type">
+            <img src="./Wallets_files/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              
+<ul class="d-none js-jump-to-suggestions-template-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-suggestion" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+</ul>
+
+<ul class="d-none js-jump-to-no-results-template-container">
+  <li class="d-flex flex-justify-center flex-items-center f5 d-none js-jump-to-suggestion p-2">
+    <span class="text-gray">No suggested jump to results</span>
+  </li>
+</ul>
+
+<ul id="jump-to-results" role="listbox" class="p-0 m-0 js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-scoped-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-global-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+
+    <li class="d-flex flex-justify-center flex-items-center p-0 f5 js-jump-to-suggestion">
+      <img src="./Wallets_files/octocat-spinner-128.gif" alt="Octocat Spinner Icon" class="m-2" width="28">
+    </li>
+</ul>
+
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+
+      <nav class="d-flex flex-column flex-lg-row flex-self-stretch flex-lg-self-auto" aria-label="Global">
+    <a class="Header-link d-block d-lg-none py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-ga-click="Header, click, Nav menu - item:dashboard:user" aria-label="Dashboard" href="https://github.com/dashboard">
+      Dashboard
+</a>
+  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="https://github.com/pulls">
+    Pull requests
+</a>
+  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="https://github.com/issues">
+    Issues
+</a>
+    <div class="mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15">
+      <a class="js-selected-navigation-item Header-link" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click" data-octo-dimensions="location:nav_bar" data-selected-links=" /marketplace" href="https://github.com/marketplace">
+        Marketplace
+</a>      
+
+    </div>
+
+  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="https://github.com/explore">
+    Explore
+</a>
+
+
+    <a class="Header-link d-block d-lg-none mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" href="https://github.com/DivyPatel9881">
+      <img class="avatar" height="20" width="20" alt="@DivyPatel9881" src="./Wallets_files/39230975">
+      DivyPatel9881
+</a>
+    <!-- '"` --><!-- </textarea></xmp> --><form action="https://github.com/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="CnWDB3DChKO/iqxUgPpfHXFvPwZ5rrNvlmVykSXNB+ifvfpKrv/qEkU9StuM6aNzW7ZN0EETbCNXNeJCfyDmbA==">
+      <button type="submit" class="Header-link mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15 d-lg-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
+        <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"></path></svg>
+        Sign out
+      </button>
+</form></nav>
+
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative">
+      <div class="css-truncate css-truncate-target width-fit position-absolute left-0 right-0 text-center">
+              <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+    <a class="Header-link" href="https://github.com/bitcoinbook">bitcoinbook</a>
+    /
+    <a class="Header-link" href="https://github.com/bitcoinbook/bitcoinbook">bitcoinbook</a>
+
+</div>
+    </div>
+
+
+    <div class="Header-item mr-0 mr-lg-3 flex-order-1 flex-lg-order-none">
+      
+
+    <a aria-label="You have no unread notifications" class="Header-link notification-indicator position-relative tooltipped tooltipped-s js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="notification-changed:39230975" href="https://github.com/notifications">
+        <span class="mail-status "></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"></path></svg>
+</a>
+    </div>
+
+
+    <div class="Header-item position-relative d-none d-lg-flex">
+      <details class="details-overlay details-reset">
+  <summary class="Header-link" aria-label="Create new…" data-ga-click="Header, create new, icon:add" aria-haspopup="menu" role="button">
+    <svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path></svg> <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw" role="menu">
+    
+<a role="menuitem" class="dropdown-item" href="https://github.com/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="https://github.com/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="https://github.com/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+  <div role="none" class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="bitcoinbook/bitcoinbook">This repository</span>
+  </div>
+    <a role="menuitem" class="dropdown-item" href="https://github.com/bitcoinbook/bitcoinbook/issues/new" data-ga-click="Header, create new issue" data-skip-pjax="">
+      New issue
+    </a>
+
+
+  </details-menu>
+</details>
+
+    </div>
+
+    <div class="Header-item position-relative mr-0 d-none d-lg-flex">
+      
+<details class="details-overlay details-reset">
+  <summary class="Header-link" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar" aria-haspopup="menu" role="button">
+    <img alt="@DivyPatel9881" class="avatar" src="./Wallets_files/39230975(1)" height="20" width="20">
+    <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw mt-2" style="width: 180px" role="menu">
+    <div class="header-nav-current-user css-truncate"><a role="menuitem" class="no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block" href="https://github.com/DivyPatel9881" data-ga-click="Header, go to profile, text:Signed in as">Signed in as <strong class="css-truncate-target">DivyPatel9881</strong></a></div>
+    <div role="none" class="dropdown-divider"></div>
+
+      <div class="pl-3 pr-3 f6 user-status-container js-user-status-context pb-1" data-url="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1">
+        
+<div class="js-user-status-container
+    user-status-compact rounded-1 px-2 py-1 mt-2
+    border
+  " data-team-hovercards-enabled="">
+  <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
+    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit " role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:5091621,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:39230975,&quot;client_id&quot;:&quot;5118939.1541954185&quot;,&quot;originating_request_id&quot;:&quot;C268:3B13:1B1C3F:276224:5D8F4E9B&quot;,&quot;originating_url&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc&quot;,&quot;referrer&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook&quot;}}" data-hydro-click-hmac="c5c7aed34548b006e735787a800ed8001203591a164066de945490b0175ef76b">
+      <div class="d-flex">
+        <div class="f6 lh-condensed user-status-header
+          d-inline-block v-align-middle
+            user-status-emoji-only-header circle
+            pr-2
+" style="max-width: 29px">
+          <div class="user-status-emoji-container flex-shrink-0 mr-1 mt-1 lh-condensed-ultra v-align-bottom" style="">
+            <g-emoji alias="thought_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+          </div>
+        </div>
+        <div class="
+          d-inline-block v-align-middle
+          
+          
+           css-truncate css-truncate-target 
+           user-status-message-wrapper f6" style="line-height: 20px;">
+          <div class="d-inline-block text-gray-dark v-align-text-top text-left">
+                <span>I can !!!!!</span>
+          </div>
+        </div>
+      </div>
+    </summary>
+    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1" aria-modal="true">
+      <!-- '"` --><!-- </textarea></xmp> --><form class="position-relative flex-auto js-user-status-form" action="https://github.com/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="v/mPkXbQhoUXxwis8qIeZafclWCn+aPq0L1weEiwpBypskrV7I8ooARNO4kfxX+F7dPmYa14EYaxb5+EJYctgg==">
+        <div class="Box-header bg-gray border-bottom p-3">
+          <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog="">
+            <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+          </button>
+          <h3 class="Box-title f5 text-bold text-gray-dark">Edit status</h3>
+        </div>
+        <input type="hidden" name="emoji" class="js-user-status-emoji-field" value="">
+        <input type="hidden" name="organization_id" class="js-user-status-org-id-field" value="">
+        <div class="px-3 py-2 text-gray-dark">
+          <div class="js-characters-remaining-container position-relative mt-2">
+            <div class="input-group d-table form-group my-0 js-user-status-form-group">
+              <span class="input-group-button d-table-cell v-align-middle" style="width: 1%">
+                <button type="button" aria-label="Choose an emoji" class="btn-outline btn js-toggle-user-status-emoji-picker btn-open-emoji-picker p-0">
+                  <span class="js-user-status-original-emoji" hidden=""></span>
+                  <span class="js-user-status-custom-emoji"></span>
+                  <span class="js-user-status-no-emoji-icon">
+                    <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 0 1-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 0 1-1.45-2.17A6.59 6.59 0 0 1 1.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 0 1 8 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"></path></svg>
+                  </span>
+                </button>
+              </span>
+              <text-expander keys=": @" data-mention-url="/autocomplete/user-suggestions" data-emoji-url="/autocomplete/emoji">
+                <input type="text" autocomplete="off" data-no-org-url="/autocomplete/user-suggestions" data-org-url="/suggestions?mention_suggester=1" data-maxlength="80" class="d-table-cell width-full form-control js-user-status-message-field js-characters-remaining-field" placeholder="What&#39;s happening?" name="message" value="I can !!!!!" aria-label="What is your current status?">
+              </text-expander>
+              <div class="error">Could not update your status, please try again.</div>
+            </div>
+            <div style="margin-left: 53px" class="my-1 text-small label-characters-remaining js-characters-remaining" data-suffix="remaining" hidden="">
+              80 remaining
+            </div>
+          </div>
+          <include-fragment class="js-user-status-emoji-picker" data-url="/users/status/emoji"></include-fragment>
+          <div class="overflow-auto ml-n3 mr-n3 px-3 border-bottom" style="max-height: 33vh">
+            <div class="user-status-suggestions js-user-status-suggestions collapsed overflow-hidden">
+              <h4 class="f6 text-normal my-3">Suggestions:</h4>
+              <div class="mx-3 mt-2 clearfix">
+                  <div class="float-left col-6">
+                      <button type="button" value=":palm_tree:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="palm_tree" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png">🌴</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          On vacation
+                        </div>
+                      </button>
+                      <button type="button" value=":face_with_thermometer:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="face_with_thermometer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f912.png">🤒</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Out sick
+                        </div>
+                      </button>
+                  </div>
+                  <div class="float-left col-6">
+                      <button type="button" value=":house:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="house" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png">🏠</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Working from home
+                        </div>
+                      </button>
+                      <button type="button" value=":dart:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="dart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png">🎯</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Focusing
+                        </div>
+                      </button>
+                  </div>
+              </div>
+            </div>
+            <div class="user-status-limited-availability-container">
+              <div class="form-checkbox my-0">
+                <input type="checkbox" name="limited_availability" value="1" class="js-user-status-limited-availability-checkbox" data-default-message="I may be slow to respond." aria-describedby="limited-availability-help-text-truncate-true-compact-true" id="limited-availability-truncate-true-compact-true">
+                <label class="d-block f5 text-gray-dark mb-1" for="limited-availability-truncate-true-compact-true">
+                  Busy
+                </label>
+                <p class="note" id="limited-availability-help-text-truncate-true-compact-true">
+                  When others mention you, assign you, or request your review,
+                  GitHub will let them know that you have limited availability.
+                </p>
+              </div>
+            </div>
+          </div>
+            
+
+<div class="d-inline-block f5 mr-2 pt-3 pb-2">
+  <div class="d-inline-block mr-1">
+    Clear status
+  </div>
+
+  <details class="js-user-status-expire-drop-down f6 dropdown details-reset details-overlay d-inline-block mr-2">
+    <summary class="f5 btn-link link-gray-dark border px-2 py-1 rounded-1" aria-haspopup="true">
+      <div class="js-user-status-expiration-interval-selected d-inline-block v-align-baseline">
+        Never
+      </div>
+      <div class="dropdown-caret"></div>
+    </summary>
+
+    <ul class="dropdown-menu dropdown-menu-se pl-0 overflow-auto" style="width: 220px; max-height: 15.5em">
+      <li>
+        <button type="button" class="btn-link dropdown-item js-user-status-expire-button ws-normal" title="Never">
+          <span class="d-inline-block text-bold mb-1">Never</span>
+          <div class="f6 lh-condensed">Keep this status until you clear your status or edit your status.</div>
+        </button>
+      </li>
+      <li class="dropdown-divider" role="none"></li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2019-09-28T18:14:21+05:30">
+            in 30 minutes
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2019-09-28T18:44:21+05:30">
+            in 1 hour
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2019-09-28T21:44:21+05:30">
+            in 4 hours
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="today" value="2019-09-28T23:59:59+05:30">
+            today
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="this week" value="2019-09-29T23:59:59+05:30">
+            this week
+          </button>
+        </li>
+    </ul>
+  </details>
+  <input class="js-user-status-expiration-date-input" type="hidden" name="expires_at" value="">
+</div>
+
+          <include-fragment class="js-user-status-org-picker" data-url="/users/status/organizations"></include-fragment>
+        </div>
+        <div class="d-flex flex-items-center flex-justify-between p-3 border-top">
+          <button type="submit" class="width-full btn btn-primary mr-2 js-user-status-submit">
+            Set status
+          </button>
+          <button type="button" class="width-full js-clear-user-status-button btn ml-2 js-user-status-exists">
+            Clear status
+          </button>
+        </div>
+</form>    </details-dialog>
+  </details>
+</div>
+
+      </div>
+      <div role="none" class="dropdown-divider"></div>
+
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/DivyPatel9881" data-ga-click="Header, go to profile, text:your profile">Your profile</a>
+
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/DivyPatel9881?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories">Your repositories</a>
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/DivyPatel9881?tab=projects" data-ga-click="Header, go to projects, text:your projects">Your projects</a>
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/DivyPatel9881?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">Your stars</a>
+      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists">Your gists</a>
+
+
+    <div role="none" class="dropdown-divider"></div>
+    <a role="menuitem" class="dropdown-item" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">Help</a>
+    <a role="menuitem" class="dropdown-item" href="https://github.com/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
+    <!-- '"` --><!-- </textarea></xmp> --><form class="logout-form" action="https://github.com/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="sVCKsZhmhE+Zy8M0K72NQn3BX+WGuI66XHr/1cvyhiIkmPP8Rlvq/mN8JbsnrnEsVxgtM74FUfadKm8GkR9npg==">
+      
+      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
+        Sign out
+      </button>
+</form>  </details-menu>
+</details>
+
+    </div>
+
+  </header>
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+    <div id="js-flash-container">
+
+</div>
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled="">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <main>
+      
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-4 ">
+    <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
+
+      <ul class="pagehead-actions">
+
+
+
+    <li hidden="">
+      
+
+    </li>
+
+  <li>
+    
+    <!-- '"` --><!-- </textarea></xmp> --><form data-remote="true" class="clearfix js-social-form js-social-container" action="https://github.com/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="U4LwIo1lp6exhHTIWqO3h+yjKnIl9/7Wao/hFw+YQ+N/avGr/ClpRFfYA5OPHZo5de+sRfZLChD7LBuQJXCyfw==">      <input type="hidden" name="repository_id" value="12044132">
+
+      <details class="details-reset details-overlay select-menu float-left">
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:12044132,&quot;client_id&quot;:&quot;5118939.1541954185&quot;,&quot;originating_request_id&quot;:&quot;C268:3B13:1B1C3F:276224:5D8F4E9B&quot;,&quot;originating_url&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc&quot;,&quot;referrer&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook&quot;,&quot;user_id&quot;:39230975}}" data-hydro-click-hmac="ddde78ec3595f90212c32a52a8f57db56d348994fb4bda0b3ec54807f46d0ef7" data-ga-click="Repository, click Watch settings, action:blob#show" aria-haspopup="menu" role="button">          <span data-menu-button="">
+              <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+              Watch
+          </span>
+</summary>        <details-menu class="select-menu-modal position-absolute mt-5" style="z-index: 99;" role="menu">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notifications</span>
+          </div>
+          <div class="select-menu-list">
+            <button type="submit" name="do" value="included" class="select-menu-item width-full" aria-checked="true" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Not watching</span>
+                <span class="description">Be notified only when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Watch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="release_only" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Releases only</span>
+                <span class="description">Be notified of new releases, and when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Unwatch releases
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="subscribed" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Watching</span>
+                <span class="description">Be notified of all conversations.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Unwatch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="ignore" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Ignoring</span>
+                <span class="description">Never be notified.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-mute v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"></path></svg>
+                  Stop ignoring
+                </span>
+              </div>
+            </button>
+          </div>
+        </details-menu>
+      </details>
+        <a class="social-count js-social-count" href="https://github.com/bitcoinbook/bitcoinbook/watchers" aria-label="992 users are watching this repository">
+          992
+        </a>
+</form>
+  </li>
+
+  <li>
+      <div class="js-toggler-container js-social-container starring-container ">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" action="https://github.com/bitcoinbook/bitcoinbook/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Y22cyix2xIM1Fw84+Mcpwh7faUZJTmIZUIHIrXgaLEfcYKTpxVVZOkfVi1retmBaKpH/T4xhTNJiTF6KX+EB9Q==">
+      <input type="hidden" name="context" value="repository">
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar bitcoinbook/bitcoinbook" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:12044132,&quot;client_id&quot;:&quot;5118939.1541954185&quot;,&quot;originating_request_id&quot;:&quot;C268:3B13:1B1C3F:276224:5D8F4E9B&quot;,&quot;originating_url&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc&quot;,&quot;referrer&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook&quot;,&quot;user_id&quot;:39230975}}" data-hydro-click-hmac="e430c67e277071e663c668ba3242daefef183c85004f07b757656a3d051b3466" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+        Unstar
+</button>        <a class="social-count js-social-count" href="https://github.com/bitcoinbook/bitcoinbook/stargazers" aria-label="12336 users starred this repository">
+           12,336
+        </a>
+</form>
+    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" action="https://github.com/bitcoinbook/bitcoinbook/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="C4pE8aBvbaagtgscxpJu+noPZvCjW/4j+WmFS00lb8cPocO7gbeUwyo36f1D048BmITL2917suDIcKQPKIiB7w==">
+      <input type="hidden" name="context" value="repository">
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star bitcoinbook/bitcoinbook" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:12044132,&quot;client_id&quot;:&quot;5118939.1541954185&quot;,&quot;originating_request_id&quot;:&quot;C268:3B13:1B1C3F:276224:5D8F4E9B&quot;,&quot;originating_url&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc&quot;,&quot;referrer&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook&quot;,&quot;user_id&quot;:39230975}}" data-hydro-click-hmac="dbf59765980d275ef151fc65b89300358ce46437f2babc1c9af509a57467dd95" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+        Star
+</button>        <a class="social-count js-social-count" href="https://github.com/bitcoinbook/bitcoinbook/stargazers" aria-label="12336 users starred this repository">
+          12,336
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <details class="details-reset details-overlay details-overlay-dark d-inline-block float-left">
+            <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:12044132,&quot;client_id&quot;:&quot;5118939.1541954185&quot;,&quot;originating_request_id&quot;:&quot;C268:3B13:1B1C3F:276224:5D8F4E9B&quot;,&quot;originating_url&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc&quot;,&quot;referrer&quot;:&quot;https://github.com/bitcoinbook/bitcoinbook&quot;,&quot;user_id&quot;:39230975}}" data-hydro-click-hmac="9ea1c9b317396cd9449eff23d55f6eed5a058a2ce9937adc314449a5158e10a8" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" title="Fork your own copy of bitcoinbook/bitcoinbook to your account" role="button">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+              Fork
+</summary>            <details-dialog class="anim-fade-in fast Box Box--overlay d-flex flex-column" src="/bitcoinbook/bitcoinbook/fork?fragment=1" preload="" role="dialog" aria-modal="true">
+              <div class="Box-header">
+                <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog="">
+                  <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+                </button>
+                <h3 class="Box-title">Fork bitcoinbook</h3>
+              </div>
+              <div class="overflow-auto text-center">
+                <include-fragment>
+                  <div class="octocat-spinner my-3" aria-label="Loading..."></div>
+                  <p class="f5 text-gray">If this dialog fails to load, you can visit <a href="https://github.com/bitcoinbook/bitcoinbook/fork">the fork page</a> directly.</p>
+                </include-fragment>
+              </div>
+            </details-dialog>
+          </details>
+
+    <a href="https://github.com/bitcoinbook/bitcoinbook/network/members" class="social-count" aria-label="3585 users forked this repository">
+      3,585
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+    <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author"><a class="url fn" rel="author" data-hovercard-type="organization" data-hovercard-url="/orgs/bitcoinbook/hovercard" href="https://github.com/bitcoinbook">bitcoinbook</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="https://github.com/bitcoinbook/bitcoinbook">bitcoinbook</a></strong>
+  
+
+</h1>
+
+    </div>
+    
+<nav class="hx_reponav reponav js-repo-nav js-sidenav-container-pjax container-lg p-responsive d-none d-lg-block" itemscope="" itemtype="http://schema.org/BreadcrumbList" aria-label="Repository" data-pjax="#js-repo-pjax-container">
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /bitcoinbook/bitcoinbook" href="https://github.com/bitcoinbook/bitcoinbook">
+      <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /bitcoinbook/bitcoinbook/issues" href="https://github.com/bitcoinbook/bitcoinbook/issues">
+        <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">66</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /bitcoinbook/bitcoinbook/pulls" href="https://github.com/bitcoinbook/bitcoinbook/pulls">
+      <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">24</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /bitcoinbook/bitcoinbook/projects" href="https://github.com/bitcoinbook/bitcoinbook/projects">
+      <svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"></path></svg>
+      Projects
+      <span class="Counter">0</span>
+</a>
+
+
+    <a data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="security alerts policy code_scanning /bitcoinbook/bitcoinbook/security/advisories" href="https://github.com/bitcoinbook/bitcoinbook/security/advisories">
+      <svg class="octicon octicon-shield" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2l7-2 7 2v6.02C14 12.69 8.69 16 7 16c-1.69 0-7-3.31-7-7.98V2zm1 .75L7 1l6 1.75v5.268C13 12.104 8.449 15 7 15c-1.449 0-6-2.896-6-6.982V2.75zm1 .75L7 2v12c-1.207 0-5-2.482-5-5.985V3.5z"></path></svg>
+      Security
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse people /bitcoinbook/bitcoinbook/pulse" href="https://github.com/bitcoinbook/bitcoinbook/pulse">
+      <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"></path></svg>
+      Insights
+</a>
+
+</nav>
+
+  <div class="reponav-wrapper reponav-small d-lg-none">
+  <nav class="reponav js-reponav text-center no-wrap" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a class="js-selected-navigation-item selected reponav-item" itemprop="url" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /bitcoinbook/bitcoinbook" href="https://github.com/bitcoinbook/bitcoinbook">
+        <span itemprop="name">Code</span>
+        <meta itemprop="position" content="1">
+</a>    </span>
+
+      <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /bitcoinbook/bitcoinbook/issues" href="https://github.com/bitcoinbook/bitcoinbook/issues">
+          <span itemprop="name">Issues</span>
+          <span class="Counter">66</span>
+          <meta itemprop="position" content="2">
+</a>      </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /bitcoinbook/bitcoinbook/pulls" href="https://github.com/bitcoinbook/bitcoinbook/pulls">
+        <span itemprop="name">Pull requests</span>
+        <span class="Counter">24</span>
+        <meta itemprop="position" content="3">
+</a>    </span>
+
+      <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /bitcoinbook/bitcoinbook/projects" href="https://github.com/bitcoinbook/bitcoinbook/projects">
+          <span itemprop="name">Projects</span>
+          <span class="Counter">0</span>
+          <meta itemprop="position" content="4">
+</a>      </span>
+
+
+      <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="security alerts policy code_scanning /bitcoinbook/bitcoinbook/security/advisories" href="https://github.com/bitcoinbook/bitcoinbook/security/advisories">
+        <span itemprop="name">Security</span>
+        <meta itemprop="position" content="6">
+</a>
+      <a class="js-selected-navigation-item reponav-item" data-selected-links="pulse /bitcoinbook/bitcoinbook/pulse" href="https://github.com/bitcoinbook/bitcoinbook/pulse">
+        Pulse
+</a>
+      <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="community /bitcoinbook/bitcoinbook/community" href="https://github.com/bitcoinbook/bitcoinbook/community">
+          Community
+</a>      </span>
+
+  </nav>
+</div>
+
+
+  </div>
+<div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+  <div class="repository-content ">
+
+    
+    
+
+
+  
+
+
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="https://github.com/bitcoinbook/bitcoinbook/blob/38e5bd84a6b15025bc84be9073f717db9bb81ee9/ch05.asciidoc">Permalink</a>
+
+    <!-- blob contrib key: blob_contributors:v21:eaa389bd96f65782e676a170ea704be8 -->
+      
+
+    <div class="d-flex flex-items-start flex-shrink-0 pb-3 flex-column flex-md-row">
+      <span class="d-flex flex-justify-between width-full width-md-auto">
+        
+<details class="details-reset details-overlay select-menu branch-select-menu  hx_rsm" id="branch-select-menu">
+  <summary class="btn btn-sm select-menu-button css-truncate" data-hotkey="w" title="Switch branches or tags" aria-haspopup="menu" role="button">
+    <i>Branch:</i>
+    <span class="css-truncate-target" data-menu-button="">develop</span>
+  </summary>
+
+  <details-menu class="select-menu-modal hx_rsm-modal position-absolute" style="z-index: 99;" src="/bitcoinbook/bitcoinbook/ref-list/develop/ch05.asciidoc?source_action=show&amp;source_controller=blob" preload="" role="menu">
+    <include-fragment class="select-menu-loading-overlay anim-pulse">
+      <svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+    </include-fragment>
+  </details-menu>
+</details>
+
+        <div class="BtnGroup flex-shrink-0 d-md-none">
+          <a href="https://github.com/bitcoinbook/bitcoinbook/find/develop" class="js-pjax-capture-input btn btn-sm BtnGroup-item" data-pjax="" data-hotkey="t">
+            Find file
+          </a>
+          <clipboard-copy value="ch05.asciidoc" class="btn btn-sm BtnGroup-item" tabindex="0" role="button">
+            Copy path
+          </clipboard-copy>
+        </div>
+      </span>
+      <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal flex-md-self-center ml-md-2 mr-md-3 my-2 my-md-0">
+        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="https://github.com/bitcoinbook/bitcoinbook"><span>bitcoinbook</span></a></span></span><span class="separator">/</span><strong class="final-path">ch05.asciidoc</strong>
+      </h2>
+
+      <div class="BtnGroup flex-shrink-0 d-none d-md-inline-block">
+        <a href="https://github.com/bitcoinbook/bitcoinbook/find/develop" class="js-pjax-capture-input btn btn-sm BtnGroup-item" data-pjax="" data-hotkey="t">
+          Find file
+        </a>
+        <clipboard-copy value="ch05.asciidoc" class="btn btn-sm BtnGroup-item" tabindex="0" role="button">
+          Copy path
+        </clipboard-copy>
+      </div>
+    </div>
+
+
+
+    
+  <div class="Box Box--condensed d-flex flex-column flex-shrink-0">
+      <div class="Box-body d-flex flex-justify-between bg-blue-light flex-column flex-md-row flex-items-start flex-md-items-center">
+        <span class="pr-md-4 f6">
+          <a rel="contributor" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=10259426" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/aminmazi"><img class="avatar" src="./Wallets_files/10259426" width="20" height="20" alt="@aminmazi"></a>
+          <a class="text-bold link-gray-dark lh-default v-align-middle" rel="contributor" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=10259426" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/aminmazi">aminmazi</a>
+            <span class="lh-default v-align-middle">
+              <a data-pjax="true" title="fix a typo in ch5 : an deterministic" class="link-gray" href="https://github.com/bitcoinbook/bitcoinbook/commit/fd9ff0017fdd44c8b499eeb2bc29afd7b83b0a64">fix a typo in ch5 : an deterministic</a>
+            </span>
+        </span>
+        <span class="d-inline-block flex-shrink-0 v-align-bottom f6 mt-2 mt-md-0">
+          <a class="pr-2 text-mono link-gray" href="https://github.com/bitcoinbook/bitcoinbook/commit/fd9ff0017fdd44c8b499eeb2bc29afd7b83b0a64" data-pjax="">fd9ff00</a>
+          <relative-time datetime="2019-01-07T07:43:58Z" title="Jan 7, 2019, 1:13 PM GMT+5:30">on Jan 7</relative-time>
+        </span>
+      </div>
+
+    <div class="Box-body d-flex flex-items-center flex-auto f6 border-bottom-0 flex-wrap">
+      <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-2" id="blob_contributors_box">
+        <summary class="btn-link" role="button">
+          <span><strong>24</strong> contributors</span>
+        </summary>
+        <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast" aria-label="Users who have contributed to this file" src="/bitcoinbook/bitcoinbook/contributors/develop/ch05.asciidoc/list" preload="" role="dialog" aria-modal="true">
+          <div class="Box-header">
+            <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog="">
+              <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+            </button>
+            <h3 class="Box-title">
+              Users who have contributed to this file
+            </h3>
+          </div>
+          <include-fragment class="octocat-spinner my-3" aria-label="Loading..."></include-fragment>
+        </details-dialog>
+      </details>
+        <span class="">
+    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=1181915" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=aantonop">
+      <img class="avatar mr-1" src="./Wallets_files/1181915" width="20" height="20" alt="@aantonop"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=1180731" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=myarbrough">
+      <img class="avatar mr-1" src="./Wallets_files/1180731" width="20" height="20" alt="@myarbrough"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=5178634" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=IndexPro">
+      <img class="avatar mr-1" src="./Wallets_files/5178634" width="20" height="20" alt="@IndexPro"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=13317719" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=nadamsoreilly">
+      <img class="avatar mr-1" src="./Wallets_files/13317719" width="20" height="20" alt="@nadamsoreilly"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=598132" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=enderminh">
+      <img class="avatar mr-1" src="./Wallets_files/598132" width="20" height="20" alt="@enderminh"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=2633903" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=mjones-wordco">
+      <img class="avatar mr-1" src="./Wallets_files/2633903" width="20" height="20" alt="@mjones-wordco"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=7134319" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=hackermatthew">
+      <img class="avatar mr-1" src="./Wallets_files/7134319" width="20" height="20" alt="@hackermatthew"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=1178372" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=kristenORM">
+      <img class="avatar mr-1" src="./Wallets_files/1178372" width="20" height="20" alt="@kristenORM"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=8242469" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=edeykholt">
+      <img class="avatar mr-1" src="./Wallets_files/8242469" width="20" height="20" alt="@edeykholt"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=1130872" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=wbnns">
+      <img class="avatar mr-1" src="./Wallets_files/1130872" width="20" height="20" alt="@wbnns"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=5115470" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=jonathancross">
+      <img class="avatar mr-1" src="./Wallets_files/5115470" width="20" height="20" alt="@jonathancross"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=7402694" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=erikwam">
+      <img class="avatar mr-1" src="./Wallets_files/7402694" width="20" height="20" alt="@erikwam"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=33743210" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=sunnyville01">
+      <img class="avatar mr-1" src="./Wallets_files/33743210" width="20" height="20" alt="@sunnyville01"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=3900799" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=kargakis">
+      <img class="avatar mr-1" src="./Wallets_files/3900799" width="20" height="20" alt="@kargakis"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=3990809" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=marzig76">
+      <img class="avatar mr-1" src="./Wallets_files/3990809" width="20" height="20" alt="@marzig76"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=1709528" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=Lornestar">
+      <img class="avatar mr-1" src="./Wallets_files/1709528" width="20" height="20" alt="@Lornestar"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=743305" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=cherouvim">
+      <img class="avatar mr-1" src="./Wallets_files/743305" width="20" height="20" alt="@cherouvim"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=5104824" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=fjrojasgarcia">
+      <img class="avatar mr-1" src="./Wallets_files/5104824" width="20" height="20" alt="@fjrojasgarcia"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=6937903" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=ethers">
+      <img class="avatar mr-1" src="./Wallets_files/6937903" width="20" height="20" alt="@ethers"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=177550" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=EdLeafe">
+      <img class="avatar mr-1" src="./Wallets_files/177550" width="20" height="20" alt="@EdLeafe"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=798806" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=physicsdude">
+      <img class="avatar mr-1" src="./Wallets_files/798806" width="20" height="20" alt="@physicsdude"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=10259426" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=aminmazi">
+      <img class="avatar mr-1" src="./Wallets_files/10259426" width="20" height="20" alt="@aminmazi"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=5015637" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=allymacdonald">
+      <img class="avatar mr-1" src="./Wallets_files/5015637" width="20" height="20" alt="@allymacdonald"> 
+</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=783040" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc?author=achiku">
+      <img class="avatar mr-1" src="./Wallets_files/783040" width="20" height="20" alt="@achiku"> 
+</a>
+</span>
+
+    </div>
+  </div>
+
+
+
+
+
+    <div class="Box mt-3 position-relative">
+      
+<div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
+
+  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+      491 lines (325 sloc)
+      <span class="file-info-divider"></span>
+    43.6 KB
+  </div>
+
+  <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
+
+    <div class="BtnGroup">
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="https://github.com/bitcoinbook/bitcoinbook/raw/develop/ch05.asciidoc">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="https://github.com/bitcoinbook/bitcoinbook/blame/develop/ch05.asciidoc">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="https://github.com/bitcoinbook/bitcoinbook/commits/develop/ch05.asciidoc">History</a>
+    </div>
+
+
+    <div>
+            <a class="btn-octicon tooltipped tooltipped-nw hide-sm" href="x-github-client://openRepo/https://github.com/bitcoinbook/bitcoinbook?branch=develop&amp;filepath=ch05.asciidoc" aria-label="Open this file in GitHub Desktop" data-ga-click="Repository, open with desktop, type:windows">
+                <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"></path></svg>
+            </a>
+
+            <!-- '"` --><!-- </textarea></xmp> --><form class="inline-form js-update-url-with-hash" action="https://github.com/bitcoinbook/bitcoinbook/edit/develop/ch05.asciidoc" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="BSw6oze1d3rBLMvmwR7/atzcNFqxSCkmBChzan0ZKjj8LipSuYS75JoMw7BTh6jwMqdLvsbTzPAIBJ2qF8qEkg==">
+              <button class="btn-octicon tooltipped tooltipped-nw" type="submit" aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with="">
+                <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg>
+              </button>
+</form>
+          <!-- '"` --><!-- </textarea></xmp> --><form class="inline-form" action="https://github.com/bitcoinbook/bitcoinbook/delete/develop/ch05.asciidoc" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="8Wg6UVR7igJmMPYIY9jp4OmVRUDvFyFrpGBo0wyPkbybmmMxiFPc3FsEhZotUgTP4pU82AU5qVG3e9qf53u1Hw==">
+            <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit" aria-label="Fork this project and delete the file" data-disable-with="">
+              <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"></path></svg>
+            </button>
+</form>    </div>
+  </div>
+</div>
+
+
+
+
+      
+  <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
+    <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><div>
+<h2 id="user-content-ch05_wallets"><a id="user-content-wallets" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#wallets"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wallets</h2>
+<div>
+<div>
+<p>The word "wallet" is used to describe a few different things in bitcoin.</p>
+</div>
+<div>
+<p>At a high level, a wallet is an application that serves as the primary user interface. The wallet controls access to a user’s money, managing keys and addresses, tracking the balance, and creating and signing transactions.</p>
+</div>
+<div>
+<p>More narrowly, from a programmer’s perspective, the word "wallet" refers to the data structure used to store and manage a user’s keys.</p>
+</div>
+<div>
+<p>In this chapter we will look at the second meaning, where wallets are containers for private keys, usually implemented as structured files or simple databases.</p>
+</div>
+<div>
+<h3 id="user-content-wallet-technology-overview"><a id="user-content-wallet-technology-overview" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#wallet-technology-overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wallet Technology Overview</h3>
+<div>
+<p>In this section we summarize the various technologies used to construct user-friendly, secure, and flexible bitcoin wallets.</p>
+</div>
+<div>
+<p>A common misconception about bitcoin is that bitcoin wallets contain bitcoin. In fact, the wallet contains only keys. The "coins" are recorded in the blockchain on the bitcoin network. Users control the coins on the network by signing transactions with the keys in their wallets. In a sense, a bitcoin wallet is a <em>keychain</em>.</p>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Tip</div>
+</td>
+<td>
+<div>
+<p>Bitcoin wallets contain keys, not coins. Each user has a wallet containing keys. Wallets are really keychains containing pairs of private/public keys (see <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#private_public_keys">[private_public_keys]</a>). Users sign transactions with the keys, thereby proving they own the transaction outputs (their coins). The coins are stored on the blockchain in the form of transaction outputs (often noted as vout or txout).</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<p>There are two primary types of wallets, distinguished by whether the keys they contain are related to each other or not.</p>
+</div>
+<div>
+<p>The first type is a <em>nondeterministic wallet</em>, where each key is independently generated from a random number. The keys are not related to each other. This type of wallet is also known as a JBOK wallet from the phrase "Just a Bunch Of Keys."</p>
+</div>
+<div>
+<p>The second type of wallet is a <em>deterministic wallet</em>, where all the keys are derived from a single master key, known as the <em>seed</em>. All the keys in this type of wallet are related to each other and can be generated again if one has the original seed. There are a number of different <em>key derivation</em> methods used in deterministic wallets. The most commonly used derivation method uses a tree-like structure and is known as a <em>hierarchical deterministic</em> or <em>HD</em> wallet.</p>
+</div>
+<div>
+<p>Deterministic wallets are initialized from a seed. To make these easier to use, seeds are encoded as English words, also known as <em>mnemonic code words</em>.</p>
+</div>
+<div>
+<p>The next few sections introduce each of these technologies at a high level.</p>
+</div>
+<div>
+<h4 id="user-content-random_wallet"><a id="user-content-nondeterministic-random-wallets" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#nondeterministic-random-wallets"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nondeterministic (Random) Wallets</h4>
+<div>
+<p>In the first bitcoin wallet (now called Bitcoin Core), wallets were collections of randomly generated private keys. For example, the original Bitcoin Core client pregenerates 100 random private keys when first started and generates more keys as needed, using each key only once.  Such wallets are being replaced with deterministic wallets because they are cumbersome to manage, back up, and import. The disadvantage of random keys is that if you generate many of them you must keep copies of all of them, meaning that the wallet must be backed up frequently. Each key must be backed up, or the funds it controls are irrevocably lost if the wallet becomes inaccessible. This conflicts directly with the principle of avoiding address reuse, by using each bitcoin address for only one transaction. Address reuse reduces privacy by associating multiple transactions and addresses with each other. A Type-0 nondeterministic wallet is a poor choice of wallet, especially if you want to avoid address reuse because it means managing many keys, which creates the need for frequent backups. Although the Bitcoin Core client includes a Type-0 wallet, using this wallet is discouraged by developers of Bitcoin Core. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#Type0_wallet">Type-0 nondeterministic (random) wallet: a collection of randomly generated keys</a> shows a nondeterministic wallet, containing a loose collection of random keys.</p>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Tip</div>
+</td>
+<td>
+<div>
+<p>The use of nondeterministic wallets is discouraged for anything other than simple tests. They are simply too cumbersome to back up and use. Instead, use an industry-standard–based <em>HD wallet</em> with a <em>mnemonic</em> seed for backup.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="user-content-type0_wallet">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0501.png"><img src="./Wallets_files/mbc2_0501.png" alt="Non-Deterministic Wallet" style="max-width:100%;"></a>
+</div>
+<div>Figure 1. Type-0 nondeterministic (random) wallet: a collection of randomly generated keys</div>
+</div>
+</div>
+<div>
+<h4 id="user-content-deterministic-seeded-wallets"><a id="user-content-deterministic-seeded-wallets" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#deterministic-seeded-wallets"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deterministic (Seeded) Wallets</h4>
+<div>
+<p>Deterministic, or "seeded," wallets are wallets that contain private keys that are all derived from a common seed, through the use of a one-way hash function. The seed is a randomly generated number that is combined with other data, such as an index number or "chain code" (see <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#hd_wallets">HD Wallets (BIP-32/BIP-44)</a>) to derive the private keys. In a deterministic wallet, the seed is sufficient to recover all the derived keys, and therefore a single backup at creation time is sufficient. The seed is also sufficient for a wallet export or import, allowing for easy migration of all the user’s keys between different wallet implementations. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#Type1_wallet">Type-1 deterministic (seeded) wallet: a deterministic sequence of keys derived from a seed</a> shows a logical diagram of a deterministic wallet.</p>
+</div>
+<div id="user-content-type1_wallet">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0502.png"><img src="./Wallets_files/mbc2_0502.png" alt="Deterministic Wallet" style="max-width:100%;"></a>
+</div>
+<div>Figure 2. Type-1 deterministic (seeded) wallet: a deterministic sequence of keys derived from a seed</div>
+</div>
+</div>
+<div>
+<h4 id="user-content-hd_wallets"><a id="user-content-hd-wallets-bip-32bip-44" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#hd-wallets-bip-32bip-44"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HD Wallets (BIP-32/BIP-44)</h4>
+<div>
+<p>Deterministic wallets were developed to make it easy to derive many keys from a single "seed." The most advanced form of deterministic wallets is the HD wallet defined by the BIP-32 standard. HD wallets contain keys derived in a tree structure, such that a parent key can derive a sequence of children keys, each of which can derive a sequence of grandchildren keys, and so on, to an infinite depth. This tree structure is illustrated in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#Type2_wallet">Type-2 HD wallet: a tree of keys generated from a single seed</a>.</p>
+</div>
+<div id="user-content-type2_wallet">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0503.png"><img src="./Wallets_files/mbc2_0503.png" alt="HD wallet" style="max-width:100%;"></a>
+</div>
+<div>Figure 3. Type-2 HD wallet: a tree of keys generated from a single seed</div>
+</div>
+<div>
+<p>HD wallets offer two major advantages over random (nondeterministic) keys. First, the tree structure can be used to express additional organizational meaning, such as when a specific branch of subkeys is used to receive incoming payments and a different branch is used to receive change from outgoing payments. Branches of keys can also be used in corporate settings, allocating different branches to departments, subsidiaries, specific functions, or accounting categories.</p>
+</div>
+<div>
+<p>The second advantage of HD wallets is that users can create a sequence of public keys without having access to the corresponding private keys. This allows HD wallets to be used on an insecure server or in a receive-only capacity, issuing a different public key for each transaction. The public keys do not need to be preloaded or derived in advance, yet the server doesn’t have the private keys that can spend the funds.</p>
+</div>
+</div>
+<div>
+<h4 id="user-content-seeds-and-mnemonic-codes-bip-39"><a id="user-content-seeds-and-mnemonic-codes-bip-39" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#seeds-and-mnemonic-codes-bip-39"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Seeds and Mnemonic Codes (BIP-39)</h4>
+<div>
+<p>HD wallets are a very powerful mechanism for managing many keys and addresses. They are even more useful if they are combined with a standardized way of creating seeds from a sequence of English words that are easy to transcribe, export, and import across wallets. This is known as a <em>mnemonic</em> and the standard is defined by BIP-39. Today, most bitcoin wallets (as well as wallets for other cryptocurrencies) use this standard and can import and export seeds for backup and recovery using interoperable mnemonics.</p>
+</div>
+<div>
+<p>Let’s look at this from a practical perspective. Which of the following seeds is easier to transcribe, record on paper, read without error, export, and import into another wallet?</p>
+</div>
+<div>
+<div>A seed for a deterministic wallet, in hex</div>
+<div>
+<pre>0C1E24E5917779D297E14D45F14E1A1A</pre>
+</div>
+</div>
+<div>
+<div>A seed for a deterministic wallet, from a 12-word mnemonic</div>
+<div>
+<pre>army van defense carry jealous true
+garbage claim echo media make crunch</pre>
+</div>
+</div>
+</div>
+<div>
+<h4 id="user-content-wallet-best-practices"><a id="user-content-wallet-best-practices" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#wallet-best-practices"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wallet Best Practices</h4>
+<div>
+<p>As bitcoin wallet technology has matured, certain common industry standards have emerged that make bitcoin wallets broadly interoperable, easy to use, secure, and flexible. These common standards are:</p>
+</div>
+<div>
+<ul>
+<li>
+<p>Mnemonic code words, based on BIP-39</p>
+</li>
+<li>
+<p>HD wallets, based on BIP-32</p>
+</li>
+<li>
+<p>Multipurpose HD wallet structure, based on BIP-43</p>
+</li>
+<li>
+<p>Multicurrency and multiaccount wallets, based on BIP-44</p>
+</li>
+</ul>
+</div>
+<div>
+<p>These standards may change or may become obsolete by future developments, but for now they form a set of interlocking technologies that have become the de facto wallet standard for bitcoin.</p>
+</div>
+<div>
+<p>The standards have been adopted by a broad range of software and hardware bitcoin wallets, making all these wallets interoperable. A user can export a mnemonic generated on one of these wallets and import it in another wallet, recovering all transactions, keys, and addresses.</p>
+</div>
+<div>
+<p>Some example of software wallets supporting these standards include (listed alphabetically) Breadwallet, Copay, Multibit HD, and Mycelium. Examples of hardware wallets supporting these standards include (listed alphabetically) Keepkey, Ledger, and Trezor.</p>
+</div>
+<div>
+<p>The following sections examine each of these technologies in detail.</p>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Tip</div>
+</td>
+<td>
+<div>
+<p>If you are implementing a bitcoin wallet, it should be built as a HD wallet, with a seed encoded as mnemonic code for backup, following the BIP-32, BIP-39, BIP-43, and BIP-44 standards, as described in the following sections.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div>
+<h4 id="user-content-using-a-bitcoin-wallet"><a id="user-content-using-a-bitcoin-wallet" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#using-a-bitcoin-wallet"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using a Bitcoin Wallet</h4>
+<div>
+<p>In <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#user-stories">[user-stories]</a> we introduced Gabriel, an enterprising young teenager in Rio de Janeiro, who is running a simple web store that sells bitcoin-branded t-shirts, coffee mugs, and stickers.</p>
+</div>
+<div>
+<p>Gabriel uses a Trezor bitcoin hardware wallet (<a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#a_trezor_device">A Trezor device: a bitcoin HD wallet in hardware</a>) to securely manage his bitcoin. The Trezor is a simple USB device with two buttons that stores keys (in the form of an HD wallet) and signs transactions. Trezor wallets implement all the industry standards discussed in this chapter, so Gabriel is not reliant on any proprietary technology or single vendor solution.</p>
+</div>
+<div id="user-content-a_trezor_device">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0504.png"><img src="./Wallets_files/mbc2_0504.png" alt="alt" style="max-width:100%;"></a>
+</div>
+<div>Figure 4. A Trezor device: a bitcoin HD wallet in hardware</div>
+</div>
+<div>
+<p>When Gabriel used the Trezor for the first time, the device generated a mnemonic and seed from a built-in hardware random number generator. During this initialization phase, the wallet displayed a numbered sequence of words, one by one, on the screen (see <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#trezor_mnemonic_display">Trezor displaying one of the mnemonic words</a>).</p>
+</div>
+<div id="user-content-trezor_mnemonic_display">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0505.png"><img src="./Wallets_files/mbc2_0505.png" alt="Trezor wallet display of mnemonic word" style="max-width:100%;"></a>
+</div>
+<div>Figure 5. Trezor displaying one of the mnemonic words</div>
+</div>
+<div>
+<p>By writing down this mnemonic, Gabriel created a backup (see <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#mnemonic_paper_backup">Gabriel’s paper backup of the mnemonic</a>) that can be used for recovery in the case of loss or damage to the Trezor device. This mnemonic can be used for recovery in a new Trezor or in any one of the many compatible software or hardware wallets. Note that the sequence of words is important, so mnemonic paper backups have numbered spaces for each word. Gabriel had to carefully record each word in the numbered space to preserve the correct sequence.</p>
+</div>
+
+Table 1. Gabriel’s paper backup of the mnemonic
+
+
+
+
+
+
+<table id="user-content-mnemonic_paper_backup"><tbody>
+<tr>
+<td><p><strong>1.</strong></p></td>
+<td><p><em>army</em></p></td>
+<td><p><strong>7.</strong></p></td>
+<td><p><em>garbage</em></p></td>
+</tr>
+<tr>
+<td><p><strong>2.</strong></p></td>
+<td><p><em>van</em></p></td>
+<td><p><strong>8.</strong></p></td>
+<td><p><em>claim</em></p></td>
+</tr>
+<tr>
+<td><p><strong>3.</strong></p></td>
+<td><p><em>defense</em></p></td>
+<td><p><strong>9.</strong></p></td>
+<td><p><em>echo</em></p></td>
+</tr>
+<tr>
+<td><p><strong>4.</strong></p></td>
+<td><p><em>carry</em></p></td>
+<td><p><strong>10.</strong></p></td>
+<td><p><em>media</em></p></td>
+</tr>
+<tr>
+<td><p><strong>5.</strong></p></td>
+<td><p><em>jealous</em></p></td>
+<td><p><strong>11.</strong></p></td>
+<td><p><em>make</em></p></td>
+</tr>
+<tr>
+<td><p><strong>6.</strong></p></td>
+<td><p><em>true</em></p></td>
+<td><p><strong>12.</strong></p></td>
+<td><p><em>crunch</em></p></td>
+</tr>
+</tbody>
+</table>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Note</div>
+</td>
+<td>
+<div>
+<p>A 12-word mnemonic is shown in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#mnemonic_paper_backup">Gabriel’s paper backup of the mnemonic</a>, for simplicity. In fact, most hardware wallets generate a more secure 24-word mnemonic. The mnemonic is used in exactly the same way, regardless of length.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<p>For the first implementation of his web store, Gabriel uses a single bitcoin address, generated on his Trezor device. This single address is used by all customers for all orders. As we will see, this approach has some drawbacks and can be improved upon with an HD wallet.</p>
+</div>
+</div>
+</div>
+<div>
+<h3 id="user-content-wallet-technology-details"><a id="user-content-wallet-technology-details" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#wallet-technology-details"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wallet Technology Details</h3>
+<div>
+<p>Let’s now examine each of the important industry standards that are used by many bitcoin wallets in detail.</p>
+</div>
+<div>
+<h4 id="user-content-mnemonic_code_words"><a id="user-content-mnemonic-code-words-bip-39" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#mnemonic-code-words-bip-39"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mnemonic Code Words (BIP-39)</h4>
+<div>
+<p>Mnemonic code words are word sequences that represent (encode) a random number used as a seed to derive a deterministic wallet. The sequence of words is sufficient to re-create the seed and from there re-create the wallet and all the derived keys. A wallet application that implements deterministic wallets with mnemonic words will show the user a sequence of 12 to 24 words when first creating a wallet. That sequence of words is the wallet backup and can be used to recover and re-create all the keys in the same or any compatible wallet application. Mnemonic words make it easier for users to back up wallets because they are easy to read and correctly transcribe, as compared to a random sequence of numbers.</p>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Tip</div>
+</td>
+<td>
+<div>
+<p>Mnemonic words are often confused with "brainwallets." They are not the same. The primary difference is that a brainwallet consists of words chosen by the user, whereas mnemonic words are created randomly by the wallet and presented to the user. This important difference makes mnemonic words much more secure, because humans are very poor sources of randomness.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<p>Mnemonic codes are defined in BIP-39 (see <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#appdxbitcoinimpproposals">[appdxbitcoinimpproposals]</a>). Note that BIP-39 is one implementation of a mnemonic code standard. There is a different standard, with a different set of words, used by the Electrum wallet and predating BIP-39. BIP-39 was proposed by the company behind the Trezor hardware wallet and is incompatible with Electrum’s implementation. However, BIP-39 has now achieved broad industry support across dozens of interoperable implementations and should be considered the de facto industry standard.</p>
+</div>
+<div>
+<p>BIP-39 defines the creation of a mnemonic code and seed, which we describe here in nine steps. For clarity, the process is split into two parts: steps 1 through 6 are shown in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#generating_mnemonic_words">Generating mnemonic words</a> and steps 7 through 9 are shown in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#mnemonic_to_seed">From mnemonic to seed</a>.</p>
+</div>
+<div>
+<h5 id="user-content-generating_mnemonic_words"><a id="user-content-generating-mnemonic-words" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#generating-mnemonic-words"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generating mnemonic words</h5>
+<div>
+<p>Mnemonic words are generated automatically by the wallet using the standardized process defined in BIP-39. The wallet starts from a source of entropy, adds a checksum, and then maps the entropy to a word list:</p>
+</div>
+<div>
+<ol>
+<li>
+<p>Create a random sequence (entropy) of 128 to 256 bits.</p>
+</li>
+<li>
+<p>Create a checksum of the random sequence by taking the first (entropy-length/32) bits of its SHA256 hash.</p>
+</li>
+<li>
+<p>Add the checksum to the end of the random sequence.</p>
+</li>
+<li>
+<p>Split the result into 11-bit length segments.</p>
+</li>
+<li>
+<p>Map each 11-bit value to a word from the predefined dictionary of 2048 words.</p>
+</li>
+<li>
+<p>The mnemonic code is the sequence of words.</p>
+</li>
+</ol>
+</div>
+<div>
+<p><a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#generating_entropy_and_encoding">Generating entropy and encoding as mnemonic words</a> shows how entropy is used to generate mnemonic words.</p>
+</div>
+<div id="user-content-generating_entropy_and_encoding">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0506.png"><img src="./Wallets_files/mbc2_0506.png" alt="Generating entropy and encoding as mnemonic words" style="max-width:100%;"></a>
+</div>
+<div>Figure 6. Generating entropy and encoding as mnemonic words</div>
+</div>
+<div>
+<p><a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#table_4-5">Mnemonic codes: entropy and word length</a> shows the relationship between the size of the entropy data and the length of mnemonic codes in words.</p>
+</div>
+
+Table 2. Mnemonic codes: entropy and word length
+
+
+
+
+
+
+<table id="user-content-table_4-5"><thead>
+<tr>
+<th>Entropy (bits)</th>
+<th>Checksum (bits)</th>
+<th>Entropy <strong>+</strong> checksum (bits)</th>
+<th>Mnemonic length (words)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>128</p></td>
+<td><p>4</p></td>
+<td><p>132</p></td>
+<td><p>12</p></td>
+</tr>
+<tr>
+<td><p>160</p></td>
+<td><p>5</p></td>
+<td><p>165</p></td>
+<td><p>15</p></td>
+</tr>
+<tr>
+<td><p>192</p></td>
+<td><p>6</p></td>
+<td><p>198</p></td>
+<td><p>18</p></td>
+</tr>
+<tr>
+<td><p>224</p></td>
+<td><p>7</p></td>
+<td><p>231</p></td>
+<td><p>21</p></td>
+</tr>
+<tr>
+<td><p>256</p></td>
+<td><p>8</p></td>
+<td><p>264</p></td>
+<td><p>24</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<h5 id="user-content-mnemonic_to_seed"><a id="user-content-from-mnemonic-to-seed" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#from-mnemonic-to-seed"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>From mnemonic to seed</h5>
+<div>
+<p>The mnemonic words represent entropy with a length of 128 to 256 bits. The entropy is then used to derive a longer (512-bit) seed through the use of the key-stretching function PBKDF2. The seed produced is then used to build a deterministic wallet and derive its keys.</p>
+</div>
+<div>
+<p>The key-stretching function takes two parameters: the mnemonic and a <em>salt</em>. The purpose of a salt in a key-stretching function is to make it difficult to build a lookup table enabling a brute-force attack. In the BIP-39 standard, the salt has another purpose—it allows the introduction of a passphrase that serves as an additional security factor protecting the seed, as we will describe in more detail in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#mnemonic_passphrase">Optional passphrase in BIP-39</a>.</p>
+</div>
+<div>
+<p>The process described in steps 7 through 9 continues from the process described previously in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#generating_mnemonic_words">Generating mnemonic words</a>:</p>
+</div>
+<ol start="7">
+	<li>The first parameter to the PBKDF2 key-stretching function is the <em>mnemonic</em> produced from step 6.</li>
+	<li>The second parameter to the PBKDF2 key-stretching function is a <em>salt</em>. The salt is composed of the string constant "<code>mnemonic</code>" concatenated with an optional user-supplied passphrase string.</li>
+	<li>PBKDF2 stretches the mnemonic and salt parameters using 2048 rounds of hashing with the HMAC-SHA512 algorithm, producing a 512-bit value as its final output. That 512-bit value is the seed.</li>
+</ol>
+<div>
+<p><a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#fig_5_7">From mnemonic to seed</a> shows how a mnemonic is used to generate a seed.</p>
+</div>
+<div id="user-content-fig_5_7">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0507.png"><img src="./Wallets_files/mbc2_0507.png" alt="From mnemonic to seed" style="max-width:100%;"></a>
+</div>
+<div>Figure 7. From mnemonic to seed</div>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Tip</div>
+</td>
+<td>
+<div>
+<p>The key-stretching function, with its 2048 rounds of hashing, is a very effective protection against brute-force attacks against the mnemonic or the passphrase. It makes it extremely costly (in computation) to try more than a few thousand passphrase and mnemonic combinations, while the number of possible derived seeds is vast (2<sup>512</sup>).</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<p>Tables <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#mnemonic_128_no_pass">#mnemonic_128_no_pass</a>, <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#mnemonic_128_w_pass">#mnemonic_128_w_pass</a>, and <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#mnemonic_256_no_pass">#mnemonic_256_no_pass</a> show some examples of mnemonic codes and the seeds they produce (without any passphrase).</p>
+</div>
+
+Table 3. 128-bit entropy mnemonic code, no passphrase, resulting seed
+
+
+
+
+<table id="user-content-mnemonic_128_no_pass"><tbody>
+<tr>
+<th><p><strong>Entropy input (128 bits)</strong></p></th>
+<td><p>0c1e24e5917779d297e14d45f14e1a1a</p></td>
+</tr>
+<tr>
+<th><p><strong>Mnemonic (12 words)</strong></p></th>
+<td><p>army van defense carry jealous true garbage claim echo media make crunch</p></td>
+</tr>
+<tr>
+<th><p><strong>Passphrase</strong></p></th>
+<td><p>(none)</p></td>
+</tr>
+<tr>
+<th><p><strong>Seed  (512 bits)</strong></p></th>
+<td><p>5b56c417303faa3fcba7e57400e120a0ca83ec5a4fc9ffba757fbe63fbd77a89a1a3be4c67196f57c39
+a88b76373733891bfaba16ed27a813ceed498804c0570</p></td>
+</tr>
+</tbody>
+</table>
+
+Table 4. 128-bit entropy mnemonic code, with passphrase, resulting seed
+
+
+
+
+<table id="user-content-mnemonic_128_w_pass"><tbody>
+<tr>
+<th><p><strong>Entropy input (128 bits)</strong></p></th>
+<td><p>0c1e24e5917779d297e14d45f14e1a1a</p></td>
+</tr>
+<tr>
+<th><p><strong>Mnemonic (12 words)</strong></p></th>
+<td><p>army van defense carry jealous true garbage claim echo media make crunch</p></td>
+</tr>
+<tr>
+<th><p><strong>Passphrase</strong></p></th>
+<td><p>SuperDuperSecret</p></td>
+</tr>
+<tr>
+<th><p><strong>Seed  (512 bits)</strong></p></th>
+<td><p>3b5df16df2157104cfdd22830162a5e170c0161653e3afe6c88defeefb0818c793dbb28ab3ab091897d0
+715861dc8a18358f80b79d49acf64142ae57037d1d54</p></td>
+</tr>
+</tbody>
+</table>
+
+Table 5. 256-bit entropy mnemonic code, no passphrase, resulting seed
+
+
+
+
+<table id="user-content-mnemonic_256_no_pass"><tbody>
+<tr>
+<th><p><strong>Entropy input (256 bits)</strong></p></th>
+<td><p>2041546864449caff939d32d574753fe684d3c947c3346713dd8423e74abcf8c</p></td>
+</tr>
+<tr>
+<th><p><strong>Mnemonic (24 words)</strong></p></th>
+<td><p>cake apple borrow silk endorse fitness top denial coil riot stay wolf
+luggage oxygen faint major edit measure invite love trap field dilemma oblige</p></td>
+</tr>
+<tr>
+<th><p><strong>Passphrase</strong></p></th>
+<td><p>(none)</p></td>
+</tr>
+<tr>
+<th><p><strong>Seed (512 bits)</strong></p></th>
+<td><p>3269bce2674acbd188d4f120072b13b088a0ecf87c6e4cae41657a0bb78f5315b33b3a04356e53d062e5
+5f1e0deaa082df8d487381379df848a6ad7e98798404</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<h5 id="user-content-mnemonic_passphrase"><a id="user-content-optional-passphrase-in-bip-39" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#optional-passphrase-in-bip-39"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Optional passphrase in BIP-39</h5>
+<div>
+<p>The BIP-39 standard allows the use of an optional passphrase in the derivation of the seed. If no passphrase is used, the mnemonic is stretched with a salt consisting of the constant string "mnemonic", producing a specific 512-bit seed from any given mnemonic. If a passphrase is used, the stretching function produces a <em>different</em> seed from that same mnemonic. In fact, given a single mnemonic, every possible passphrase leads to a different seed. Essentially, there is no "wrong" passphrase. All passphrases are valid and they all lead to different seeds, forming a vast set of possible uninitialized wallets. The set of possible wallets is so large (2<sup>512</sup>) that there is no practical possibility of brute-forcing or accidentally guessing one that is in use.</p>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Tip</div>
+</td>
+<td>
+<div>
+<p>There are no "wrong" passphrases in BIP-39. Every passphrase leads to some wallet, which unless previously used will be empty.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<p>The optional passphrase creates two important features:</p>
+</div>
+<div>
+<ul>
+<li>
+<p>A second factor (something memorized) that makes a mnemonic useless on its own, protecting mnemonic backups from compromise by a thief.</p>
+</li>
+<li>
+<p>A form of plausible deniability or "duress wallet," where a chosen passphrase leads to a wallet with a small amount of funds used to distract an attacker from the "real" wallet that contains the majority of funds.</p>
+</li>
+</ul>
+</div>
+<div>
+<p>However, it is important to note that the use of a passphrase also introduces the risk of loss:</p>
+</div>
+<div>
+<ul>
+<li>
+<p>If the wallet owner is incapacitated or dead and no one else knows the passphrase, the seed is useless and all the funds stored in the wallet are lost forever.</p>
+</li>
+<li>
+<p>Conversely, if the owner backs up the passphrase in the same place as the seed, it defeats the purpose of a second factor.</p>
+</li>
+</ul>
+</div>
+<div>
+<p>While passphrases are very useful, they should only be used in combination with a carefully planned process for backup and recovery, considering the possibility of surviving the owner and allowing his or her family to recover the cryptocurrency estate.</p>
+</div>
+</div>
+<div>
+<h5 id="user-content-working-with-mnemonic-codes"><a id="user-content-working-with-mnemonic-codes" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#working-with-mnemonic-codes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Working with mnemonic codes</h5>
+<div>
+<p>BIP-39 is implemented as a library in many different programming languages:</p>
+</div>
+<div>
+<dl>
+<dt><a href="https://github.com/trezor/python-mnemonic">python-mnemonic</a></dt>
+<dd>
+<p>The reference implementation of the standard by the SatoshiLabs team that proposed BIP-39, in Python</p>
+</dd>
+<dt><a href="https://github.com/bitcoinjs/bip39">bitcoinjs/bip39</a></dt>
+<dd>
+<p>An implementation of BIP-39, as part of the popular bitcoinJS framework, in JavaScript</p>
+</dd>
+<dt><a href="https://github.com/libbitcoin/libbitcoin/blob/master/src/wallet/mnemonic.cpp">libbitcoin/mnemonic</a></dt>
+<dd>
+<p>An implementation of BIP-39, as part of the popular Libbitcoin framework, in <span>C++</span></p>
+</dd>
+</dl>
+</div>
+<div>
+<p>There is also a BIP-39 generator implemented in a standalone webpage, which is extremely useful for testing and experimentation. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#a_bip39_generator_as_a_standalone_web_page">A BIP-39 generator as a standalone web page</a> shows a standalone web page that generates mnemonics, seeds, and extended private keys.</p>
+</div>
+<div id="user-content-a_bip39_generator_as_a_standalone_web_page">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0508.png"><img src="./Wallets_files/mbc2_0508.png" alt="BIP-39 generator web-page" style="max-width:100%;"></a>
+</div>
+<div>Figure 8. A BIP-39 generator as a standalone web page</div>
+</div>
+<div>
+<p>The page (<a href="https://iancoleman.github.io/bip39/" rel="nofollow">https://iancoleman.github.io/bip39/</a>) can be used offline in a browser, or accessed online.</p>
+</div>
+</div>
+</div>
+<div>
+<h4 id="user-content-creating-an-hd-wallet-from-the-seed"><a id="user-content-creating-an-hd-wallet-from-the-seed" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#creating-an-hd-wallet-from-the-seed"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating an HD Wallet from the Seed</h4>
+<div>
+<p>HD wallets are created from a single <em>root seed</em>, which is a 128-, 256-, or 512-bit random number. Most commonly, this seed is generated from a <em>mnemonic</em> as detailed in the previous section.</p>
+</div>
+<div>
+<p>Every key in the HD wallet is deterministically derived from this root seed, which makes it possible to re-create the entire HD wallet from that seed in any compatible HD wallet. This makes it easy to back up, restore, export, and import HD wallets containing thousands or even millions of keys by simply transferring only the mnemonic that the root seed is derived from.</p>
+</div>
+<div>
+<p>The process of creating the master keys and master chain code for an HD wallet is shown in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#HDWalletFromSeed">Creating master keys and chain code from a root seed</a>.</p>
+</div>
+<div id="user-content-hdwalletfromseed">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0509.png"><img src="./Wallets_files/mbc2_0509.png" alt="HDWalletFromRootSeed" style="max-width:100%;"></a>
+</div>
+<div>Figure 9. Creating master keys and chain code from a root seed</div>
+</div>
+<div>
+<p>The root seed is input into the HMAC-SHA512 algorithm and the resulting hash is used to create a <em>master private key</em> (m) and a <em>master chain code</em> (c).</p>
+</div>
+<div>
+<p>The master private key (m) then generates a corresponding master public key (M) using the normal elliptic curve multiplication process m * G that we saw in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#pubkey">[pubkey]</a>.</p>
+</div>
+<div>
+<p>The chain code (c) is used to introduce entropy in the function that creates child keys from parent keys, as we will see in the next section.</p>
+</div>
+<div>
+<h5 id="user-content-private-child-key-derivation"><a id="user-content-private-child-key-derivation" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#private-child-key-derivation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Private child key derivation</h5>
+<div>
+<p>HD wallets use a <em>child key derivation</em> (CKD) function to derive child keys from parent keys.</p>
+</div>
+<div>
+<p>The child key derivation functions are based on a one-way hash function that combines:</p>
+</div>
+<div>
+<ul>
+<li>
+<p>A parent private or public key (ECDSA uncompressed key)</p>
+</li>
+<li>
+<p>A seed called a chain code (256 bits)</p>
+</li>
+<li>
+<p>An index number (32 bits)</p>
+</li>
+</ul>
+</div>
+<div>
+<p>The chain code is used to introduce deterministic random data to the process, so that knowing the index and a child key is not sufficient to derive other child keys. Knowing a child key does not make it possible to find its siblings, unless you also have the chain code. The initial chain code seed (at the root of the tree) is made from the seed, while subsequent child chain codes are derived from each parent chain code.</p>
+</div>
+<div>
+<p>These three items (parent key, chain code, and index) are combined and hashed to generate children keys, as follows.</p>
+</div>
+<div>
+<p>The parent public key, chain code, and the index number are combined and hashed with the HMAC-SHA512 algorithm to produce a 512-bit hash. This 512-bit hash is split into two 256-bit halves. The right-half 256 bits of the hash output become the chain code for the child. The left-half 256 bits of the hash are added to the parent private key to produce the child private key. In <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#CKDpriv">Extending a parent private key to create a child private key</a>, we see this illustrated with the index set to 0 to produce the "zero" (first by index) child of the parent.</p>
+</div>
+<div id="user-content-ckdpriv">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0510.png"><img src="./Wallets_files/mbc2_0510.png" alt="ChildPrivateDerivation" style="max-width:100%;"></a>
+</div>
+<div>Figure 10. Extending a parent private key to create a child private key</div>
+</div>
+<div>
+<p>Changing the index allows us to extend the parent and create the other children in the sequence, e.g., Child 0, Child 1, Child 2, etc. Each parent key can have 2,147,483,647 (2<sup>31</sup>) children (2<sup>31</sup> is half of the entire 2<sup>32</sup> range available because the other half is reserved for a special type of derivation we will talk about later in this chapter).</p>
+</div>
+<div>
+<p>Repeating the process one level down the tree, each child can in turn become a parent and create its own children, in an infinite number of generations.</p>
+</div>
+</div>
+<div>
+<h5 id="user-content-using-derived-child-keys"><a id="user-content-using-derived-child-keys" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#using-derived-child-keys"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using derived child keys</h5>
+<div>
+<p>Child private keys are indistinguishable from nondeterministic (random) keys. Because the derivation function is a one-way function, the child key cannot be used to find the parent key. The child key also cannot be used to find any siblings. If you have the n<sub>th</sub> child, you cannot find its siblings, such as the n–1 child or the n+1 child, or any other children that are part of the sequence. Only the parent key and chain code can derive all the children. Without the child chain code, the child key cannot be used to derive any grandchildren either. You need both the child private key and the child chain code to start a new branch and derive grandchildren.</p>
+</div>
+<div>
+<p>So what can the child private key be used for on its own? It can be used to make a public key and a bitcoin address. Then, it can be used to sign transactions to spend anything paid to that address.</p>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Tip</div>
+</td>
+<td>
+<div>
+<p>A child private key, the corresponding public key, and the bitcoin address are all indistinguishable from keys and addresses created randomly. The fact that they are part of a sequence is not visible outside of the HD wallet function that created them. Once created, they operate exactly as "normal" keys.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div>
+<h5 id="user-content-extended-keys"><a id="user-content-extended-keys" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#extended-keys"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extended keys</h5>
+<div>
+<p>As we saw earlier, the key derivation function can be used to create children at any level of the tree, based on the three inputs: a key, a chain code, and the index of the desired child. The two essential ingredients are the key and chain code, and combined these are called an <em>extended key</em>. The term "extended key" could also be thought of as "extensible key" because such a key can be used to derive children.</p>
+</div>
+<div>
+<p>Extended keys are stored and represented simply as the concatenation of the 256-bit key and 256-bit chain code into a 512-bit sequence. There are two types of extended keys. An extended private key is the combination of a private key and chain code and can be used to derive child private keys (and from them, child public keys). An extended public key is a public key and chain code, which can be used to create child public keys (<em>public only</em>), as described in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#public_key_derivation">[public_key_derivation]</a>.</p>
+</div>
+<div>
+<p>Think of an extended key as the root of a branch in the tree structure of the HD wallet. With the root of the branch, you can derive the rest of the branch. The extended private key can create a complete branch, whereas the extended public key can <em>only</em> create a branch of public keys.</p>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<div>Tip</div>
+</td>
+<td>
+<div>
+<p>An extended key consists of a private or public key and chain code. An extended key can create children, generating its own branch in the tree structure. Sharing an extended key gives access to the entire branch.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<p>Extended keys are encoded using Base58Check, to easily export and import between different BIP-32–compatible wallets. The Base58Check coding for extended keys uses a special version number that results in the prefix "xprv" and "xpub" when encoded in Base58 characters to make them easily recognizable. Because the extended key is 512 or 513 bits, it is also much longer than other Base58Check-encoded strings we have seen previously.</p>
+</div>
+<div>
+<p>Here’s an example of an extended <em>private</em> key, encoded in Base58Check:</p>
+</div>
+<div>
+<div>
+<pre>xprv9tyUQV64JT5qs3RSTJkXCWKMyUgoQp7F3hA1xzG6ZGu6u6Q9VMNjGr67Lctvy5P8oyaYAL9CAWrUE9i6GoNMKUga5biW6Hx4tws2six3b9c</pre>
+</div>
+</div>
+<div>
+<p>Here’s the corresponding extended <em>public</em> key, encoded in Base58Check:</p>
+</div>
+<div>
+<div>
+<pre>xpub67xpozcx8pe95XVuZLHXZeG6XWXHpGq6Qv5cmNfi7cS5mtjJ2tgypeQbBs2UAR6KECeeMVKZBPLrtJunSDMstweyLXhRgPxdp14sk9tJPW9</pre>
+</div>
+</div>
+</div>
+<div>
+<h5 id="user-content-public__child_key_derivation"><a id="user-content-public-child-key-derivation" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#public-child-key-derivation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Public child key derivation</h5>
+<div>
+<p>As mentioned  previously, a very useful characteristic of HD wallets is the ability to derive public child keys from public parent keys, <em>without</em> having the private keys. This gives us two ways to derive a child public key: either from the child private key, or directly from the parent public key.</p>
+</div>
+<div>
+<p>An extended public key can be used, therefore, to derive all of the <em>public</em> keys (and only the public keys) in that branch of the HD wallet structure.</p>
+</div>
+<div>
+<p>This shortcut can be used to create very secure public key–only deployments where a server or application has a copy of an extended public key and no private keys whatsoever. That kind of deployment can produce an infinite number of public keys and bitcoin addresses, but cannot spend any of the money sent to those addresses. Meanwhile, on another, more secure server, the extended private key can derive all the corresponding private keys to sign transactions and spend the money.</p>
+</div>
+<div>
+<p>One common application of this solution is to install an extended public key on a web server that serves an ecommerce application. The web server can use the public key derivation function to create a new bitcoin address for every transaction (e.g., for a customer shopping cart). The web server will not have any private keys that would be vulnerable to theft. Without HD wallets, the only way to do this is to generate thousands of bitcoin addresses on a separate secure server and then preload them on the ecommerce server. That approach is cumbersome and requires constant maintenance to ensure that the ecommerce server doesn’t "run out" of keys.</p>
+</div>
+<div>
+<p>Another common application of this solution is for cold-storage or hardware wallets. In that scenario, the extended private key can be stored on a paper wallet or hardware device (such as a Trezor hardware wallet), while the extended public key can be kept online. The user can create "receive" addresses at will, while the private keys are safely stored offline. To spend the funds, the user can use the extended private key on an offline signing bitcoin client or sign transactions on the hardware wallet device (e.g., Trezor). <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#CKDpub">Extending a parent public key to create a child public key</a> illustrates the mechanism for extending a parent public key to derive child public keys.</p>
+</div>
+<div id="user-content-ckdpub">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0511.png"><img src="./Wallets_files/mbc2_0511.png" alt="ChildPublicDerivation" style="max-width:100%;"></a>
+</div>
+<div>Figure 11. Extending a parent public key to create a child public key</div>
+</div>
+</div>
+</div>
+<div>
+<h4 id="user-content-using-an-extended-public-key-on-a-web-store"><a id="user-content-using-an-extended-public-key-on-a-web-store" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#using-an-extended-public-key-on-a-web-store"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using an Extended Public Key on a Web Store</h4>
+<div>
+<p>Let’s see how HD wallets are used by continuing our story with Gabriel’s web store.</p>
+</div>
+<div>
+<p>Gabriel first set up his web store as a hobby, based on a simple hosted Wordpress page. His store was quite basic with only a few pages and an order form with a single bitcoin address.</p>
+</div>
+<div>
+<p>Gabriel used the first bitcoin address generated by his Trezor device as the main bitcoin address for his store. This way, all incoming payments would be paid to an address controlled by his Trezor hardware wallet.</p>
+</div>
+<div>
+<p>Customers would submit an order using the form and send payment to Gabriel’s published bitcoin address, triggering an email with the order details for Gabriel to process. With just a few orders each week, this system worked well enough.</p>
+</div>
+<div>
+<p>However, the little web store became quite successful and attracted many orders from the local community. Soon, Gabriel was overwhelmed. With all the orders paying the same address, it became difficult to correctly match orders and transactions, especially when multiple orders for the same amount came in close together.</p>
+</div>
+<div>
+<p>Gabriel’s HD wallet offers a much better solution through the ability to derive public child keys without knowing the private keys. Gabriel can load an extended public key (xpub) on his website, which can be used to derive a unique address for every customer order. Gabriel can spend the funds from his Trezor, but the xpub loaded on the website can only generate addresses and receive funds. This feature of HD wallets is a great security feature. Gabriel’s website does not contain any private keys and therefore does not need high levels of security.</p>
+</div>
+<div>
+<p>To export the xpub, Gabriel uses the web-based software in conjunction with the Trezor hardware wallet. The Trezor device must be plugged in for the public keys to be exported. Note that hardware wallets will never export private keys—those always remain on the device. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#export_xpub">Exporting an xpub from a Trezor hardware wallet</a> shows the web interface Gabriel uses to export the xpub.</p>
+</div>
+<div id="user-content-export_xpub">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0512.png"><img src="./Wallets_files/mbc2_0512.png" alt="Exporting the xpub from the Trezor" style="max-width:100%;"></a>
+</div>
+<div>Figure 12. Exporting an xpub from a Trezor hardware wallet</div>
+</div>
+<div>
+<p>Gabriel copies the xpub to his web store’s bitcoin shop software. He uses <em>Mycelium Gear</em>, which is an open source web-store plugin for a variety of web hosting and content platforms. Mycelium Gear uses the xpub to generate a unique address for every purchase. </p>
+</div>
+<div>
+<h5 id="user-content-hardened-child-key-derivation"><a id="user-content-hardened-child-key-derivation" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#hardened-child-key-derivation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hardened child key derivation</h5>
+<div>
+<p>The ability to derive a branch of public keys from an xpub is very useful, but it comes with a potential risk. Access to an xpub does not give access to child private keys. However, because the xpub contains the chain code, if a child private key is known, or somehow leaked, it can be used with the chain code to derive all the other child private keys. A single leaked child private key, together with a parent chain code, reveals all the private keys of all the children. Worse, the child private key together with a parent chain code can be used to deduce the parent private key.</p>
+</div>
+<div>
+<p>To counter this risk, HD wallets use an alternative derivation function called <em>hardened derivation</em>, which "breaks" the relationship between parent public key and child chain code. The hardened derivation function uses the parent private key to derive the child chain code, instead of the parent public key. This creates a "firewall" in the parent/child sequence, with a chain code that cannot be used to compromise a parent or sibling private key. The hardened derivation function looks almost identical to the normal child private key derivation, except that the parent private key is used as input to the hash function, instead of the parent public key, as shown in the diagram in <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#CKDprime">Hardened derivation of a child key; omits the parent public key</a>.</p>
+</div>
+<div id="user-content-ckdprime">
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/images/mbc2_0513.png"><img src="./Wallets_files/mbc2_0513.png" alt="ChildHardPrivateDerivation" style="max-width:100%;"></a>
+</div>
+<div>Figure 13. Hardened derivation of a child key; omits the parent public key</div>
+</div>
+<div>
+<p>When the hardened private derivation function is used, the resulting child private key and chain code are completely different from what would result from the normal derivation function. The resulting "branch" of keys can be used to produce extended public keys that are not vulnerable, because the chain code they contain cannot be exploited to reveal any private keys. Hardened derivation is therefore used to create a "gap" in the tree above the level where extended public keys are used.</p>
+</div>
+<div>
+<p>In simple terms, if you want to use the convenience of an xpub to derive branches of public keys, without exposing yourself to the risk of a leaked chain code, you should derive it from a hardened parent, rather than a normal parent. As a best practice, the level-1 children of the master keys are always derived through the hardened derivation, to prevent compromise of the master keys.</p>
+</div>
+</div>
+<div>
+<h5 id="user-content-index-numbers-for-normal-and-hardened-derivation"><a id="user-content-index-numbers-for-normal-and-hardened-derivation" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#index-numbers-for-normal-and-hardened-derivation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Index numbers for normal and hardened derivation</h5>
+<div>
+<p>The index number used in the derivation function is a 32-bit integer. To easily distinguish between keys derived through the normal derivation function versus keys derived through hardened derivation, this index number is split into two ranges. Index numbers between 0 and 2<sup>31</sup>–1 (0x0 to 0x7FFFFFFF) are used <em>only</em> for normal derivation. Index numbers between 2<sup>31</sup> and 2<sup>32</sup>–1 (0x80000000 to 0xFFFFFFFF) are used <em>only</em> for hardened derivation. Therefore, if the index number is less than 2<sup>31</sup>, the child is normal, whereas if the index number is equal or above 2<sup>31</sup>, the child is hardened.</p>
+</div>
+<div>
+<p>To make the index number easier to read and display, the index number for hardened children is displayed starting from zero, but with a prime symbol. The first normal child key is therefore displayed as 0, whereas the first hardened child (index 0x80000000) is displayed as 0&amp;#x27;. In sequence then, the second hardened key would have index 0x80000001 and would be displayed as 1&amp;#x27;, and so on. When you see an HD wallet index i&amp;#x27;, that means 2<sup>31</sup>+i.</p>
+</div>
+</div>
+<div>
+<h5 id="user-content-hd-wallet-key-identifier-path"><a id="user-content-hd-wallet-key-identifier-path" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#hd-wallet-key-identifier-path"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HD wallet key identifier (path)</h5>
+<div>
+<p>Keys in an HD wallet are identified using a "path" naming convention, with each level of the tree separated by a slash (/) character (see <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#table_4-8">HD wallet path examples</a>). Private keys derived from the master private key start with "m." Public keys derived from the master public key start with "M." Therefore, the first child private key of the master private key is m/0. The first child public key is M/0. The second grandchild of the first child is m/0/1, and so on.</p>
+</div>
+<div>
+<p>The "ancestry" of a key is read from right to left, until you reach the master key from which it was derived. For example, identifier m/x/y/z describes the key that is the z-th child of key m/x/y, which is the y-th child of key m/x, which is the x-th child of m.</p>
+</div>
+
+Table 6. HD wallet path examples
+
+
+
+
+<table id="user-content-table_4-8"><thead>
+<tr>
+<th>HD path</th>
+<th>Key described</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>m/0</p></td>
+<td><p>The first (0) child private key from the master private key (m)</p></td>
+</tr>
+<tr>
+<td><p>m/0/0</p></td>
+<td><p>The first grandchild private key from the first child (m/0)</p></td>
+</tr>
+<tr>
+<td><p>m/0'/0</p></td>
+<td><p>The first normal grandchild from the first <em>hardened</em> child (m/0')</p></td>
+</tr>
+<tr>
+<td><p>m/1/0</p></td>
+<td><p>The first grandchild private key from the second child (m/1)</p></td>
+</tr>
+<tr>
+<td><p>M/23/17/0/0</p></td>
+<td><p>The first great-great-grandchild public key from the first great-grandchild from the 18th grandchild from the 24th child</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<h5 id="user-content-navigating-the-hd-wallet-tree-structure"><a id="user-content-navigating-the-hd-wallet-tree-structure" class="anchor" aria-hidden="true" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#navigating-the-hd-wallet-tree-structure"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Navigating the HD wallet tree structure</h5>
+<div>
+<p>The HD wallet tree structure offers tremendous flexibility. Each parent extended key can have 4 billion children: 2 billion normal children and 2 billion hardened children. Each of those children can have another 4 billion children, and so on. The tree can be as deep as you want, with an infinite number of generations. With all that flexibility, however, it becomes quite difficult to navigate this infinite tree. It is especially difficult to transfer HD wallets between implementations, because the possibilities for internal organization into branches and subbranches are endless.</p>
+</div>
+<div>
+<p>Two BIPs offer a solution to this complexity by creating some proposed standards for the structure of HD wallet trees. BIP-43 proposes the use of the first hardened child index as a special identifier that signifies the "purpose" of the tree structure. Based on BIP-43, an HD wallet should use only one level-1 branch of the tree, with the index number identifying the structure and namespace of the rest of the tree by defining its purpose. For example, an HD wallet using only branch m/i&amp;#x27;/ is intended to signify a specific purpose and that purpose is identified by index number "i."</p>
+</div>
+<div>
+<p>Extending that specification, BIP-44 proposes a multiaccount structure as "purpose" number 44' under BIP-43. All HD wallets following the BIP-44 structure are identified by the fact that they only used one branch of the tree: m/44'/.</p>
+</div>
+<div>
+<p>BIP-44 specifies the structure as consisting of five predefined tree levels:</p>
+</div>
+<div>
+<div>
+<pre>m / purpose' / coin_type' / account' / change / address_index</pre>
+</div>
+</div>
+<div>
+<p>The first-level "purpose" is always set to 44'. The second-level "coin_type" specifies the type of cryptocurrency coin, allowing for multicurrency HD wallets where each currency has its own subtree under the second level. There are three currencies defined for now: Bitcoin is m/44'/0', Bitcoin Testnet is m/44&amp;#x27;/1&amp;#x27;, and Litecoin is m/44&amp;#x27;/2&amp;#x27;.</p>
+</div>
+<div>
+<p>The third level of the tree is "account," which allows users to subdivide their wallets into separate logical subaccounts, for accounting or organizational purposes. For example, an HD wallet might contain two bitcoin "accounts": m/44&amp;#x27;/0&amp;#x27;/0&amp;#x27; and m/44&amp;#x27;/0&amp;#x27;/1&amp;#x27;. Each account is the root of its own subtree.</p>
+</div>
+<div>
+<p>On the fourth level, "change," an HD wallet has two subtrees, one for creating receiving addresses and one for creating change addresses. Note that whereas the previous levels used hardened derivation, this level uses normal derivation. This is to allow this level of the tree to export extended public keys for use in a nonsecured environment. Usable addresses are derived by the HD wallet as children of the fourth level, making the fifth level of the tree the "address_index." For example, the third receiving address for bitcoin payments in the primary account would be M/44&amp;#x27;/0&amp;#x27;/0&amp;#x27;/0/2. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#table_4-9">BIP-44 HD wallet structure examples</a> shows a few more examples.</p>
+</div>
+
+Table 7. BIP-44 HD wallet structure examples
+
+
+
+
+<table id="user-content-table_4-9"><thead>
+<tr>
+<th>HD path</th>
+<th>Key described</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>M/44&amp;#x27;/0&amp;#x27;/0&amp;#x27;/0/2</p></td>
+<td><p>The third receiving public key for the primary bitcoin account</p></td>
+</tr>
+<tr>
+<td><p>M/44&amp;#x27;/0&amp;#x27;/3&amp;#x27;/1/14</p></td>
+<td><p>The fifteenth change-address public key for the fourth bitcoin account</p></td>
+</tr>
+<tr>
+<td><p>m/44&amp;#x27;/2&amp;#x27;/0&amp;#x27;/0/1</p></td>
+<td><p>The second private key in the Litecoin main account, for signing transactions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div></article>
+  </div>
+
+    </div>
+
+  
+
+  <details class="details-reset details-overlay details-overlay-dark">
+    <summary data-hotkey="l" aria-label="Jump to line" role="button"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast linejump" aria-label="Jump to line" role="dialog" aria-modal="true">
+      <!-- '"` --><!-- </textarea></xmp> --><form class="js-jump-to-line-form Box-body d-flex" action="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+        <input class="form-control flex-auto mr-3 linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line…" aria-label="Jump to line" autofocus="">
+        <button type="submit" class="btn" data-close-dialog="">Go</button>
+</form>    </details-dialog>
+  </details>
+
+
+
+  </div>
+</div>
+
+    </main>
+  </div>
+  
+
+  </div>
+
+        
+<div class="footer container-lg width-full p-responsive" role="contentinfo">
+  <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      <li class="mr-3 mr-lg-0">© 2019 <span title="0.44334s from unicorn-769b7b9f69-dwlxn">GitHub</span>, Inc.</li>
+        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com/">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mx-lg-4" href="https://github.com/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+      <li class="mr-3 mr-lg-0"><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3 mr-lg-0"><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://github.blog/" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    
+    <script crossorigin="anonymous" integrity="sha512-2e003yIUkuCG1IeaeQwIgzMwqYiC+7wN/ouvY2yay84wnLng3/MScKxudf02uj4T4RZAnF5zJumvacsF9lfTMw==" type="application/javascript" src="./Wallets_files/frameworks-8e9b232b.js.download"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-5srqGco8avFoVw1A62FcGlaY8DzO3MWwwTL6l+CRizuO765zsFZkXamHphgnKHUzGbOOvr+NrqNS9CXYS1ySlQ==" type="application/javascript" src="./Wallets_files/github-bootstrap-75ce8f90.js.download"></script>
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner" hidden="">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc">Reload</a> to refresh your session.</span>
+  </div>
+  <template id="site-details-dialog"></template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+  <div aria-live="polite" class="js-global-screen-reader-notice sr-only"></div>
+
+  
+
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
