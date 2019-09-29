@@ -3,8 +3,9 @@ package main
 import ("fmt";
 		//"math/big"
 		"elliptic_curve_key_generation";
-		"wallet";
+		//"wallet";
 		//"crypto/sha512";
+		"elliptic_curve_digital_signature_generation";
 		)
 		
 func main(){
@@ -33,9 +34,18 @@ func main(){
 	fmt.Printf("%X",bytes)
 	Integer,_ := new(big.Int).SetString("A",16)
 	fmt.Printf("%d",Integer)
-	*/
+	
 	fmt.Println(elliptic_curve_key_generation.CompressedPublicKey("2"))
 	fmt.Println(wallet.ChildPublicKeyGenerator("02C6047F9441ED7D6D3045406E95C07CD85C778E4B8CEF3CA7ABAC09B95C709EE5","2",0))
 	fmt.Println(wallet.ChildPrivateKeyGenerator("2","2",0))
 	fmt.Println(elliptic_curve_key_generation.CompressedPublicKey("47581640817870642330691603300449775897285483678155889044195286196953467712712"))
+	*/
+	R,S := elliptic_curve_digital_signature_generation.EllipticCurveDigitalSignatureGenerator("2","3","Hello")
+	pX, pY := elliptic_curve_key_generation.PublicKeyGenerator("3")
+	fmt.Println(elliptic_curve_digital_signature_generation.EllipticCurveDigitalSignatureVerifier("89565891926547004231252920425935692360644145829622209833684329913297188986597","24068917058926912194676773038160490119087835964610282300377278172857912065757","112711660439710606056748659173929673102114977341539408544630613555209775888121","25583027980570883691656905877401976406448868254816295069919888960541586679410","Hello"))
+	fmt.Println(pX, pY)
+	fmt.Println(R,S)
+	var k []int = make([]int,1)
+	k = append(k,1,2)
+	fmt.Println(k)
 }
