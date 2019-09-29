@@ -10,7 +10,6 @@ import ("fmt";
 func MultipliedPoint(multiplier string, PointX string, PointY string) (string, string){
 	multiplierInt,_ := new(big.Int).SetString(multiplier,10)
 	binaryMultiplier := fmt.Sprintf("%b",multiplierInt)
-	fmt.Println(binaryMultiplier)
 	reverseBinaryMultiplier := elliptic_curve_key_generation.Reverse(binaryMultiplier)
 	var powers []int = make([]int,1)
 	for i := 0 ; i < len(binaryMultiplier) ; i++{
@@ -26,8 +25,7 @@ func MultipliedPoint(multiplier string, PointX string, PointY string) (string, s
 		points = append(points, prevX, prevY)
 		k++
 	}
-	fmt.Println(powers)
-	for i := 1 ; i < 256 && k<len(powers); i++ {
+	for i := 1 ; i < 257 && k<len(powers); i++ {
 		newX, newY := elliptic_curve_key_generation.OnePointAddition(prevX, prevY)
 		if powers[k]==i{
 			points = append(points, newX, newY)
@@ -38,8 +36,6 @@ func MultipliedPoint(multiplier string, PointX string, PointY string) (string, s
 	}
 	finalPointX := points[1]
 	finalPointY := points[2]
-	fmt.Println(len(points))
-	fmt.Println(len(powers))
 	for i := 2 ; i < len(powers) ; i++{
 		newX := points[2*i-1]
 		newY := points[(2*i)]
